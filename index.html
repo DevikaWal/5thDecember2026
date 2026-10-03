@@ -41,31 +41,31 @@ section, .events-section, .moments-section, .carousel {
     position: fixed;
     inset: 0;
     z-index: 99999;
-
-    min-height: 100vh;
-    width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     overflow: hidden;
+    background: #000;
+}
 
-    /* YOUR ENTRANCE PHOTO */
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.55),
-            rgba(0, 0, 0, 0.55)
-        ),
-        url('SHP07393.jpg');
+/* ENTRANCE PHOTO */
+.entry-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 0;
+}
 
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-
-    color: white;
-
-    transition: opacity 0.8s ease;
+/* DARK PHOTO OVERLAY */
+.entry-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.58);
+    z-index: 1;
+    pointer-events: none;
 }
 
 
@@ -923,6 +923,25 @@ section, .events-section, .carousel {
     }
 
 }
+/* ===== PREVENT SCROLLING ON ENTRY PAGE ===== */
+
+html.entry-active,
+body.entry-active {
+    overflow: hidden !important;
+    height: 100% !important;
+    overscroll-behavior: none !important;
+    touch-action: none !important;
+}
+
+#entry {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    overflow: hidden !important;
+    touch-action: none !important;
+}
 
 </style>
 </head>
@@ -950,6 +969,12 @@ justify-content:center;
 <!-- FULL PHOTO ENTRANCE -->
 
 <div id="entry">
+
+        <!-- ENTRANCE PHOTO -->
+    <img src="SHP07393.jpg" class="entry-photo">
+
+    <!-- DARK OVERLAY -->
+    <div class="entry-photo-overlay"></div>
 
     <img src="ds-logo.png" class="entry-logo"> 
     <div class="entry-content">
@@ -1099,6 +1124,9 @@ document.addEventListener("touchmove", function(e){
 let countdownStarted = false;
 // 🔒 lock scroll initially
 document.body.classList.add("locked");
+document.documentElement.classList.add("entry-active");
+document.body.classList.add("entry-active");
+
 window.unlocked = false;
 let lockPosition = 0;
 const eventHeading = document.querySelector(".events-section h2");
@@ -1115,6 +1143,8 @@ function enterSite(){
 
     // 🔓 STEP 1 — UNLOCK SCROLL (ADD THIS FIRST)
     document.body.classList.remove("locked");
+    document.body.classList.remove("entry-active");
+    document.documentElement.classList.remove("entry-active");
 
     // reset fixed body (important)
     document.body.style.position = "";

@@ -63,7 +63,7 @@ section, .events-section, .moments-section, .carousel {
 .entry-photo-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.58);
+    background: rgba(0,0,0,0.48);
     z-index: 1;
     pointer-events: none;
 }
@@ -126,17 +126,22 @@ section, .events-section, .moments-section, .carousel {
 .open-btn {
     padding: 13px 32px;
 
-    border: 1px solid rgba(255,255,255,0.75);
+    border: 1px solid rgba(255, 215, 120, 0.75);
 
     border-radius: 30px;
 
-    background: rgba(255,255,255,0.12);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 236, 170, 0.35),
+        rgba(212, 175, 55, 0.22),
+        rgba(255, 245, 200, 0.30)
+    );
 
     backdrop-filter: blur(8px);
 
     -webkit-backdrop-filter: blur(8px);
 
-    color: white;
+    color: #fff8dc;
 
     font-family: 'Poppins', sans-serif;
 
@@ -156,12 +161,19 @@ section, .events-section, .moments-section, .carousel {
 
 
 .open-btn:hover {
-    background: rgba(255,255,255,0.22);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 230, 150, 0.55),
+        rgba(212, 175, 55, 0.40),
+        rgba(255, 245, 200, 0.50)
+    );
 
+    border-color: rgba(255, 225, 140, 0.95);
     transform: translateY(-2px);
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,0.35);
+        inset 0 1px 2px rgba(255,255,255,0.7),
+        0 6px 25px rgba(212,175,55,0.40);
 }
 
 
@@ -969,7 +981,6 @@ justify-content:center;
 <!-- FULL PHOTO ENTRANCE -->
 
 <div id="entry">
-
         <!-- ENTRANCE PHOTO -->
     <img src="SHP07393.jpg" class="entry-photo">
 

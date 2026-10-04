@@ -10,7 +10,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -20,7 +19,6 @@ body {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-
 body.loaded {
     opacity: 1;
 }
@@ -28,15 +26,6 @@ html, body {
     scroll-behavior: smooth;
     overscroll-behavior: none;
 }
-section, .events-section, .moments-section, .carousel {
-    transform: translateZ(0);
-    will-change: transform;
-}
-
-/* ===== ENTRY (UNCHANGED) ===== */
-
-/* ===== FULL PHOTO ENTRANCE ===== */
-
 #entry {
     position: fixed;
     inset: 0;
@@ -67,27 +56,6 @@ section, .events-section, .moments-section, .carousel {
     z-index: 1;
     pointer-events: none;
 }
-
-
-/* Dark cinematic overlay */
-#entry::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.15) 0%,
-            rgba(0,0,0,0.25) 40%,
-            rgba(0,0,0,0.70) 100%
-        );
-
-    pointer-events: none;
-}
-
-
-/* Entrance content */
 .entry-content {
     position: absolute;
     z-index: 2;
@@ -97,69 +65,31 @@ section, .events-section, .moments-section, .carousel {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    animation: entranceFade 1.5s ease forwards;
+    animation: entranceFade 3s ease forwards;
 }
-
-
-/* .entry-title {
-    font-family: 'Poppins', serif;
-    font-size: 48px;
-    color: white;
-    margin: 0 0 12px;
-    text-shadow:
-        0 3px 15px rgba(0,0,0,0.8),
-        0 0 25px rgba(0,0,0,0.5);
-}
-
-
-.entry-subtitle {
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 35px;
-} */
-
-
-/* Tap to open button */
 .open-btn {
     padding: 13px 32px;
-
     border: 1px solid rgba(255, 215, 120, 0.75);
-
     border-radius: 30px;
-
     background: linear-gradient(
         135deg,
         rgba(255, 236, 170, 0.35),
         rgba(212, 175, 55, 0.22),
         rgba(255, 245, 200, 0.30)
     );
-
     backdrop-filter: blur(8px);
-
     -webkit-backdrop-filter: blur(8px);
-
     color: #fff8dc;
-
     font-family: 'Poppins', sans-serif;
-
     font-size: 13px;
-
     letter-spacing: 2px;
-
     text-transform: uppercase;
-
     cursor: pointer;
-
     transition:
         background 0.3s ease,
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
-
-
 .open-btn:hover {
     background: linear-gradient(
         135deg,
@@ -176,1305 +106,182 @@ section, .events-section, .moments-section, .carousel {
         0 6px 25px rgba(212,175,55,0.40);
 }
 
-
 .open-btn:active {
     transform: scale(0.97);
 }
 
-
-/* Entrance animation */
-@keyframes entranceFade {
-
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-
-/* Mobile */
-@media (max-width: 768px) {
-
-    #entry {
-        background-position: center center;
-    }
-
-    /* .entry-title {
-        font-size: 40px;
-    } */
-
-    /* .entry-subtitle {
-        font-size: 11px;
-        letter-spacing: 3px;
-    } */
-
-    .open-btn {
-        padding: 12px 28px;
-        font-size: 12px;
-    }
-
-}
-
-/* ===== COVER ===== */
-header {
-    height:100vh;
-
-    background:
-        linear-gradient(
-            rgba(255,255,255,0.10),
-            rgba(255,255,255,0.05)
-        ),
-        url('cover.jpg') center/cover no-repeat;
-
-    opacity:0;
-    transition:0.8s;
-}
-
-header.active { opacity:1; }
-
-.hero-text {
-    position:absolute;
-    top:58%;
-    left:50%;
-    transform:translate(-50%,-40%);
-    opacity:0;
-    animation:fadeInUp 1.2s ease forwards;
-    animation-delay:0.5s;
-}
-@keyframes fadeInUp {
-    to {
-        opacity:1;
-        transform:translate(-50%,-50%);
-    }
-}
-
-.hero-subtitle {
-    font-family:'Great Vibes';
-    font-size:34px;
-    color:white;
-    letter-spacing:1px;
-text-shadow:
-    0 8px 25px rgba(0,0,0,1),
-    0 3px 10px rgba(0,0,0,0.85),
-    0 0 10px rgba(255,255,255,0.3);
-
-    transform: translateX(4px);
-}
-
-.hero-divider {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    margin:14px auto 0;
-    width:140px; /* 👈 VERY IMPORTANT */
-}
-
-.hero-divider .line {
-    flex:1;
-    height:1.5px;
-    background:rgba(255,255,255,0.7);
-}
-
-.hero-divider .heart {
-    font-size:14px;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-shadow:0 0 10px rgba(255,255,255,0.8);
-}
-.hero-names {
-    font-family:'Great Vibes';
-    font-size:76px;
-    color:white;
-    line-height:1.2;
-    letter-spacing:1px;
-    text-align:center;
-text-shadow:
-    0 12px 40px rgba(0,0,0,1),
-    0 6px 18px rgba(0,0,0,0.9),
-    0 2px 6px rgba(0,0,0,0.8),
-    0 0 14px rgba(255,255,255,0.35),
-    0 0 22px rgba(0,0,0,0.6);
-}
-
-.hero-names .amp {
-    font-size:42px;
-    margin:5px 0;
-}
-
-.scroll-text {
-    position:absolute;
-    bottom:50px;
-    left:50%;
-    transform:translateX(-50%);
-    color:white;
-    font-size:13px;
-    letter-spacing:2px;
-    opacity:0.85;
-    animation: scroll 1.5s infinite;
-}
-
-@keyframes scroll {
-    0%   { transform: translate(-50%, 0); }
-    50%  { transform: translate(-50%, 10px); }
-    100% { transform: translate(-50%, 0); }
-}
-
-/* ===== INVITE ===== */
-.invite-section {
-    text-align:center;
-    margin:40px 20px 0px;
-  line-height: 1.4;
-}
-.divider {
-    margin: 6px auto;
-    height: 1px;
-    display: block;
-}
-.invite-text {
-    max-width:550px;
-    margin:6px auto;   /* 🔥 reduced from 15px */
-    font-size:15px;
-    line-height:1.6;   /* slightly tighter */
-    color:#555;
-}
-
-
-.invite-line {
-    width:60px;
-    height:1px;
-    background:#d8a1a8;
-    margin:6px auto;   /* 🔥 reduced from 12px */
-    opacity:0.7;
-}
-
-/* ===== SCRATCH ===== */
-.scratch-section {
-    text-align: center;
-    margin: 70px 0 40px; /* reduced bottom gap */
-}
-
-.scratch-title {
-    font-family: 'Great Vibes';
-    font-size:38px;
-    color:#8d3c3c;
-    margin-bottom:20px;
-}
-
-.scratch-card {
-    width:250px;
-    height:100px;
-    margin:auto;
-    border-radius:18px;
-    overflow:hidden;
-    position:relative;
-    background:linear-gradient(135deg,#f8e7b5,#e2c675,#caa94a,#e2c675,#f8e7b5);
-}
-
-.scratch-content {
-    position:absolute;
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    pointer-events:none;
-}
-
-.scratch-content h3 {
-    font-family: 'Great Vibes';
-    font-size: 32px;
-    color: #5a3e0b;
-
-    /* ✨ glow */
-    text-shadow:
-    0 0 4px #fff,
-    0 0 10px #ffd700;
-
-    /* ✨ sparkle animation */
-    animation: sparkleGlow 3s ease-in-out 2;
-}
-@keyframes sparkleGlow {
-    from {
-        text-shadow:
-            0 0 4px #fff,
-            0 0 8px #ffd700;
-    }
-    to {
-        text-shadow:
-            0 0 10px #fff,
-            0 0 22px #ffd700,
-            0 0 30px #ffd700;
-    }
-}
-
-/* Glow */
-.glow {
-    animation: glowPulse 1.2s ease-in-out infinite alternate;
-}
-
-@keyframes glowPulse {
-    from { text-shadow:0 0 5px #fff,0 0 10px #ffd700; }
-    to { text-shadow:0 0 15px #fff,0 0 25px #ffd700; }
-}
-
-#scratchCanvas {
-    position:absolute;
-    top:0;
-    left:0;
-}
-
-/* ===== EVENTS ===== */
-.events-section { text-align:center;margin:60px 0; }
-
-.events-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 16px;
-
-    flex-wrap: nowrap;       /* ❗ force horizontal */
-    overflow-x: auto;        /* mobile scroll */
-    padding: 10px 20px;
-
-
-}
-.event-card {
-    width: 280px;
-    padding: 22px 20px;
-    border-radius: 18px;
-    background: #fbf7f4;
-    border: 1px solid rgba(180, 140, 120, 0.25);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    text-align: center;
-    flex: 0 0 280px;         /* fixed width */
-    scroll-snap-align: center;
-
-
-}
-
-.event-title {
-    font-family: 'Great Vibes';
-    font-size: 26px;
-    color: #7a4a4a;
-    margin-bottom: 8px;
-}
-
-.event-date {
-    font-weight: 600;
-    color: #5a2e2e;
-    margin-bottom: 8px;
-}
-
-.event-location {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 16px;
-}
-.location-btn {
-    display: inline-block;
-    padding: 8px 18px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #e8c76a, #d4af37);
-    color: #3d2a00;
-    text-decoration: none;
-
-    /* NEW */
-    transition: all 0.3s ease, transform 0.2s ease;
-}
-.location-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(212,175,55,0.4);
-}
-.location-btn:active {
-    transform: scale(0.96);
-}
-.reveal-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 250px;          /* ✅ SAME AS SCRATCH CARD */
-    height: 100px;         /* ✅ SAME AS SCRATCH CARD */
-
-    margin: 25px auto 0;
-
-    border-radius: 18px;   /* match scratch-card */
-    border: none;
-
- font-size: 24px;        /* 👈 ADD HERE */
-    letter-spacing: 1px;    /* 👈 ADD HERE */
-
-    font-family: 'Great Vibes', cursive;
-    font-size: 26px;
-
-    color: #3a2a00;
-    text-align: center;
-
-    background: linear-gradient(
-        135deg,
-        #f5d77a 0%,
-        #d4af37 45%,
-        #c39b2e 55%,
-        #f0d77a 100%
-    );
-
-    box-shadow:
-        inset 0 2px 5px rgba(255,255,255,0.6),
-        inset 0 -2px 6px rgba(0,0,0,0.2),
-        0 6px 14px rgba(0,0,0,0.12);
-
-    position: relative;
-    overflow: hidden;
-}
-.moments-section {
-    text-align: center;
-    margin: 60px 20px;
-}
-
-.moments-subtext {
-    max-width: 500px;
-    margin: 10px auto 25px;
-    font-size: 15px;
-    color: #555;
-    line-height: 1.6;
-}
-
-.video-container {
-    width: 100%;
-    max-width: 640px;
-    margin: 30px auto;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.video-container iframe {
-    width: 100%;
-    height: 215px;
-    border: none;
-}
-.yt-preview {
-    aspect-ratio: 16 / 9;
-    position: relative;
-    border-radius: 18px;
-    overflow: hidden;
-    cursor: pointer;
-
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-
-    transition: transform 0.3s ease;
-
-    transform: translateZ(0);        /* 🔥 ADD */
-    will-change: transform;          /* 🔥 ADD */
-}
-
-.yt-preview img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    transform: translateZ(0);  /* 🔥 ADD */
-    backface-visibility: hidden;
-}
-
-.yt-btn {
-    display: inline-block !important;
-    margin-top: 15px !important;
-
-    padding: 10px 22px !important;
-    border-radius: 25px;
-
-    background: #e0b100 !important;
-    color: #000 !important;
-
-    text-decoration: none;
-    font-weight: 500;
-
-    box-shadow: none !important;
-}
-/* ===== PREMIUM DATE AFTER REVEAL ===== */
-
-/* ✨ shimmer sweep */.reveal-btn.revealed {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 26px;
-    letter-spacing: 1px;
-
-    color: #4a3500;
-
-    text-shadow:
-        0 0 10px rgba(255,255,255,0.9),
-        0 0 22px rgba(255,215,0,0.8);
-
-    animation: sparkleText 1.5s infinite alternate;
-
-}
-
-/* ✨ shimmer animation */
-@keyframes shineMove {
-    0% { left: -60%; }
-    100% { left: 130%; }
-}
-
-/* ✨ sparkle glow */
-@keyframes sparkleText {
-    from {
-        text-shadow:
-            0 0 6px #fff,
-            0 0 12px #ffd700;
-    }
-    to {
-        text-shadow:
-            0 0 12px #fff,
-            0 0 25px #ffd700;
-    }
-}
-
-.yt-preview img {
-    width: 100%;
-    display: block;
-}
-
-
-/* ▶️ play button */
-.play-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    width: 70px;
-    height: 50px;
-    background: rgba(255,0,0,0.9);
-    border-radius: 14px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-
-/* ▶️ triangle */
-.play-btn::after {
-    content: "";
-    border-left: 16px solid white;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    margin-left: 3px;
-}
-
-
-/* ===== CAROUSEL ===== */
-.carousel {
-    overflow: hidden;
-    margin: 60px auto;
-    max-width: 1000px;
-    position: relative;
-background: transparent;
-transform: translateZ(0);
-will-change: transform;
-}
-
-.carousel-track {
-    display: flex;
-    gap: 10px;
-    width: max-content;
-
-    animation: slide var(--speed) linear infinite;
-
-    will-change: transform;
-    transform: translate3d(0,0,0); /* 🔥 smoother than translateX */
-}
-
-/* default (desktop) */
-:root {
-    --speed: 22s;
-}
-
-/* mobile slower */
-@media (max-width: 768px) {
-    :root {
-        --speed: 40s;
-    }
-}
-
-.carousel img {
-    width: 260px;
-    height: 340px;
-    object-fit: cover;
-    border-radius: 14px;
-    flex-shrink: 0;
-
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    image-rendering: auto;
-}
-
-@keyframes slide {
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* ===== SPARKLE WAVES ===== */
-.sparkle {
-    position: fixed;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    pointer-events: none;
-    opacity: 0.9;
-    animation: floatDown linear forwards;
-}
-
-.sparkle.gold {
-    background: radial-gradient(circle, #fff5cc, #d4af37);
-    box-shadow: 0 0 12px #d4af37;
-}
-
-.sparkle.pink {
-    background: radial-gradient(circle, #ffd6e0, #ff9aa2);
-    box-shadow: 0 0 10px #ff9aa2;
-}
-
-@keyframes floatDown {
-    0% { transform: translateY(-20px) scale(0.6); opacity: 0; }
-    20% { opacity: 1; }
-    100% { transform: translateY(110vh) scale(1.2); opacity: 0; }
-}
-
-#countdown {
-    text-align: center;
-    margin-top: 18px;
-    color: #b48a2c;
-    font-weight: 600;
-    font-size: 17px;
-    letter-spacing: 1px;
-}
-#scratchCanvas {
-    touch-action: none; /* 🔥 disables browser gestures */
-}
-header {
-    position: relative;
-    z-index: 0;
-}
-#scratchDate {
-    font-family: 'Great Vibes', cursive;
-    font-size: 30px;
-    color: #5a3e0b;
-
-    opacity: 0;   /* hidden initially */
-    transition: opacity 0.4s ease;
-
-    text-shadow:
-        0 0 6px #fff,
-        0 0 12px #ffd700;
-}
-
-/* when revealed */
-.scratch-card.revealed #scratchDate {
-    opacity: 1;
-}
-#scratchCanvas {
-    transition: opacity 0.5s ease;
-}
-
-section, .events-section, .carousel {
-    position: relative;
-    z-index: 2;
-}
-#countdown {
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    min-height: 24px;
-}
-#countdown.show {
-    opacity: 1;
-}
-/* 🌸 tiny petals */
-.petal {
-    position: absolute;  /* IMPORTANT: not fixed */
-    width: 8px;
-    height: 10px;
-    border-radius: 50% 50% 50% 0;
-
-    background: radial-gradient(circle, #ffdce5, #f4a6b8);
-
-    opacity: 0.8;
-    pointer-events: none;
-
-    animation: petalFall linear forwards;
-}
-
-@keyframes petalFall {
-    0% {
-        transform: translateY(-20px) rotate(0deg);
-        opacity: 0;
-    }
-    20% { opacity: 0.8; }
-    100% {
-        transform: translateY(120vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-#musicToggle {
-    position: fixed;
-    z-index: 100000;
-}
-@media (max-width: 768px) {
-/* ✅ MOBILE FIX — STACK CARDS */
-.events-wrapper {
-    flex-direction: column !important;
-    flex-wrap: nowrap !important;
-    overflow-x: hidden !important;
-    align-items: center;
-}
-
-.event-card {
-    width: 92% !important;
-    flex: none !important;
-    margin: 10px 0;
-}
-    header {
-        background-position: center top;
-    }
-
-    .hero-subtitle {
-        font-size: 22px;
-        transform: translateX(4px);
-    }
-
-    .hero-names {
-        font-size: 46px;
-    }
-
-    .hero-names .amp {
-        font-size: 27px;
-        margin: 3px 0;
-    }
-
-    .hero-text {
-        top: 55%;
-        transform: translate(-50%, -50%);
-        width: 90%;
-    }
-
-    .hero-divider .line {
-        width: 42px;
-    }
-
-    .scroll-text {
-        bottom: 60px;
-        font-size: 12px;
-    }
-
-}
-/* ===== NEW PHOTO ENTRANCE ===== */
-
-#entry {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            rgba(0,0,0,0.58),
-            rgba(0,0,0,0.58)
-        ),
-        url('SHP07393.jpg') center/cover no-repeat;
-}
-
-
-/* D&S LOGO */
-
 .entry-logo {
     position: absolute;
-    top: 30px;
+    top: 15px;
+    left: 50%;
     width: 400px;
     height: 400px;
     object-fit: contain;
     z-index: 3;
     filter: drop-shadow(0 4px 12px rgba(0,0,0,0.7));
+
+    opacity: 0;
+    animation: logoEntrance 3s ease forwards;
+}
+@keyframes logoEntrance {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
 }
 
+@keyframes entranceFade {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-/* MOBILE */
+#musicToggle {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.65);
+    color: #ffd700;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 100000;
+}
 
+/* Mobile */
 @media (max-width: 768px) {
-
+    #entry {
+        background-position: center center;
+    }
+    .open-btn {
+        padding: 12px 28px;
+        font-size: 12px;
+    }
     .entry-logo {
         top: 50px;
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
     }
-
-    .entry-content {
-        margin-top: 70px;
-    }
-
-    .entry-content .invite-title {
-        font-size: 42px;
-    }
-
 }
-/* ===== PREVENT SCROLLING ON ENTRY PAGE ===== */
-
-html.entry-active,
-body.entry-active {
-    overflow: hidden !important;
-    height: 100% !important;
-    overscroll-behavior: none !important;
-    touch-action: none !important;
-}
-
-#entry {
-    position: fixed !important;
-    inset: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    min-height: 100vh !important;
-    overflow: hidden !important;
-    touch-action: none !important;
-}
-
 </style>
 </head>
-
-<body>
-<button id="musicToggle" style="
-display:none;   /* 🔥 ADD THIS */
-position: fixed;
-bottom: 20px;
-right: 20px;
-z-index: 99999;
-
-width: 42px;
-height: 42px;
-border-radius: 50%;
-background: rgba(0,0,0,0.6);
-color:#ffd700;
-align-items:center;
-justify-content:center;
-">
+<body><button id="musicToggle" >
 🔊
 </button>
-
-<!-- ENTRY -->
-<!-- FULL PHOTO ENTRANCE -->
-
-<div id="entry">
+    <div id="entry">
         <!-- ENTRANCE PHOTO -->
     <img src="SHP07393.jpg" class="entry-photo">
-
     <!-- DARK OVERLAY -->
     <div class="entry-photo-overlay"></div>
-
     <img src="ds-logo.png" class="entry-logo"> 
     <div class="entry-content">
-
-        <!-- <div class="entry-subtitle">
-            Together with our families
-        </div>
-
-        <h1 class="entry-title">
-            You're Invited
-        </h1> -->
-
         <button class="open-btn" onclick="enterSite()">
             Open Invitation
         </button>
-
     </div>
 
 </div>
-
-<!-- COVER -->
-<header id="mainHeader">
-    <div class="hero-text">
-        <div class="hero-names">
-            Mahendra
-            <div class="amp">&</div>
-            Deepali
-        </div>
-<div class="hero-divider">
-    <span class="line"></span>
-    <span class="heart">❤</span>
-    <span class="line"></span>
-</div>
-
-    </div>
-
-    <!-- ✅ MOVE SCROLL HERE -->
-    <div class="scroll-text">Scroll ↓</div>
-</header>
-
-<!-- INVITE -->
-<section class="invite-section">
-    <div class="invite-line"></div>
-    <p class="invite-text">
-        Together with our families, we joyfully invite you to celebrate
-                          the beginning of our forever.
-    </p>
-    <div class="invite-line"></div>
-</section>
-
-<!-- SCRATCH -->
-<section class="scratch-section">
-
-    <h2 class="scratch-title">Save the Date</h2>
-
-<div class="scratch-card">
-    <div class="scratch-content">
-        <h3 id="scratchDate">15 May 2026</h3>
-    </div>
-    <canvas id="scratchCanvas"></canvas>
-</div>
-<button id="scratchBtn" class="reveal-btn" style="display:none;">
-    ✨ Scratch to Reveal
-</button>
-    <p id="countdown" style="margin-top:15px; color:#b48a2c; display:none;"></p>
-
-</section>
-
-<!-- EVENTS -->
-<div class="events-section">
-    <h2 id="weddingEventsHeading" class="scratch-title">Wedding Events</h2>
-
-    <div class="events-wrapper" id="eventsWrapper">
-
-        <div class="event-card">
-            <div class="event-title">🎶 Sangeet</div>
-            <div class="event-date">14 May 2026 | 5:00 PM</div>
-            <div class="event-location">Hillside Community Hall, Powai, Mumbai</div>
-            <a href="https://www.google.com/maps/search/?api=1&query=Hillside+Community+Hall+Powai" target="_blank" class="location-btn">Location</a>
-        </div>
-
-        <div class="event-card">
-            <div class="event-title">🌼 Haldi</div>
-            <div class="event-date">14 May 2026 | 6:00 PM</div>
-            <div class="event-location">Hillside Community Hall, Powai, Mumbai</div>
-            <a href="https://www.google.com/maps/search/?api=1&query=Hillside+Community+Hall+Powai" target="_blank" class="location-btn">Location</a>
-        </div>
-
-        <div class="event-card">
-            <div class="event-title">💍 Wedding & Reception</div>
-            <div class="event-date">15 May 2026 | 6:15 PM</div>
-            <div class="event-location">Murlidhar Banquet, Ghodbunder Road, Thane West</div>
-            <a href="https://www.google.com/maps/search/?api=1&query=Murlidhar+Banquet+Thane" target="_blank" class="location-btn">Location</a>
-        </div>
-    </div>
-
-
-<section class="moments-section">
-
-    <h2 class="scratch-title">Our Moments</h2>
-
-    <p class="moments-subtext">
-        A glimpse of our beautiful journey together ❤️
-    </p>
-
-    <!-- ✅ THIS SHOULD BE HERE -->
-<div class="video-container">
-  <div class="yt-preview">
-
-    <img src="https://img.youtube.com/vi/JSl1R7Yf4wA/maxresdefault.jpg" />
-
-    <div class="play-btn" onclick="openVideo()"></div>
-
-  </div>
-</div>
-
-</section>
-
-<!-- CAROUSEL -->
-<div class="carousel">
-   <div class="carousel-track">
-    <!-- original -->
-    <img src="8.jpg"><img src="2.jpg"><img src="3.jpg">
-    <img src="4.jpg"><img src="6.jpg"><img src="7.jpg">
-
-    <!-- duplicate (must match exactly) -->
-    <img src="8.jpg"><img src="2.jpg"><img src="3.jpg">
-    <img src="4.jpg"><img src="6.jpg"><img src="7.jpg">
-</div>
-</div>
-
-<!-- CLOSING SENTIMENT -->
-<section class="invite-section">
-    <div class="invite-line"></div>
-    <p class="invite-text" style="font-size:16px; font-weight:500;">
-        We look forward to celebrating with you on this special occasion
-    </p>
-    <div class="invite-line"></div>
-</section>
 <script>
-// 🚫 BLOCK MOBILE SCROLL WHEN LOCKED
-document.addEventListener("touchmove", function(e){
-    if(document.body.classList.contains("locked")){
-        e.preventDefault();
-    }
-}, { passive: false });
-let countdownStarted = false;
-// 🔒 lock scroll initially
-document.body.classList.add("locked");
-document.documentElement.classList.add("entry-active");
-document.body.classList.add("entry-active");
+    document.body.classList.add("locked");
+    document.documentElement.classList.add("entry-active");
+    document.body.classList.add("entry-active");
 
-window.unlocked = false;
-let lockPosition = 0;
-const eventHeading = document.querySelector(".events-section h2");
-// 🔥 DEV MODE (set true to test scratch again)
-const DEV_RESET = false;
+    // function enterSite(){
 
-if (DEV_RESET) {
-    localStorage.removeItem("dateRevealed");
-}
+    // // 🔓 STEP 1 — UNLOCK SCROLL (ADD THIS FIRST)
+    // document.body.classList.remove("locked");
+    // document.body.classList.remove("entry-active");
+    // document.documentElement.classList.remove("entry-active");
 
-let alreadyRevealed = localStorage.getItem("dateRevealed");
+    // // reset fixed body (important)
+    // document.body.style.position = "";
+    // document.body.style.top = "";
+    // document.body.style.width = "";
 
-function enterSite(){
+    // // STEP 2 — hide entry
+    // document.getElementById("entry").style.display = "none";
 
-    // 🔓 STEP 1 — UNLOCK SCROLL (ADD THIS FIRST)
-    document.body.classList.remove("locked");
-    document.body.classList.remove("entry-active");
-    document.documentElement.classList.remove("entry-active");
+    // // STEP 3 — show main content
+    // const header = document.getElementById("mainHeader");
+    // header.classList.add("active");
+    // header.style.opacity = "1";
 
-    // reset fixed body (important)
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.width = "";
+    // window.scrollTo(0,0);
 
-    // STEP 2 — hide entry
+    // // STEP 4 — play music
+    // const music = document.getElementById("bgMusic");
+
+    // if (music.currentTime === 0) {
+    //     music.currentTime = 16;   // start point
+    // }   
+
+    // music.volume = 0.5;
+    // music.play().catch(() => {});
+    // document.getElementById("musicToggle").style.display = "flex";
+    // }
+function enterSite() {
+
+    // Hide entrance
     document.getElementById("entry").style.display = "none";
 
-    // STEP 3 — show main content
-    const header = document.getElementById("mainHeader");
-    header.classList.add("active");
-    header.style.opacity = "1";
+    // Get music
+    const music = document.getElementById("bgMusic");
 
-    window.scrollTo(0,0);
+    // Volume
+    music.volume = 0.5;
 
-    // STEP 4 — play music
-const music = document.getElementById("bgMusic");
+    // Start from beginning for testing
+    music.currentTime = 17.5;
 
-if (music.currentTime === 0) {
-    music.currentTime = 23.2;   // start point
+    // Play
+    music.play()
+        .then(() => {
+            console.log("Music started successfully");
+        })
+        .catch((error) => {
+            console.error("Music failed:", error);
+        });
+
+    // Show music button
+    document.getElementById("musicToggle").style.display = "flex";
 }
 
-music.volume = 0.5;
-music.play().catch(() => {});
-document.getElementById("musicToggle").style.display = "flex";
-}
-window.unlocked = false;
-// ===== SCROLL LOCK AT SCRATCH =====
-
-window.addEventListener("scroll", () => {
-
-    if (window.unlocked) return;
-
-    const rect = eventHeading.getBoundingClientRect();
-
-    // 🔥 LOCK POSITION CALCULATED LIVE
-    const lockY = window.scrollY + rect.top - 700;
-
-    if (window.scrollY > lockY) {
-        window.scrollTo(0, lockY);
-    }
-
-});
-const canvas = document.getElementById("scratchCanvas");
-canvas.style.pointerEvents = alreadyRevealed ? "none" : "auto";
-const ctx = canvas.getContext("2d");
-const card = document.querySelector(".scratch-card");
-
-canvas.width = card.offsetWidth;
-canvas.height = card.offsetHeight;
-
-// 🎀 pink scratch layer
-ctx.fillStyle = "#f8cdd1";
-ctx.fillRect(0,0,canvas.width,canvas.height);
-
-// ✨ ADD TEXT HERE (IMPORTANT POSITION)
-
-// ✨ PREMIUM MATCHING TEXT
-
-ctx.font = "600 24px Poppins";
-ctx.textAlign = "center";
-ctx.textBaseline = "middle";
-
-// 🎯 match heading color
-ctx.fillStyle = "#7a2e2e";   // same family as your titles
-
-// no shadow, no stroke (clean)
-ctx.shadowBlur = 0;
-
-// draw
-ctx.fillText("Scratch here", canvas.width / 2, canvas.height / 2);
-
-
-document.getElementById("scratchBtn").addEventListener("click", () => {
-    canvas.style.pointerEvents = "auto";
+    window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
 });
 
-if(alreadyRevealed){
-
-    // ❌ hide scratch button completely
-    document.getElementById("scratchBtn").style.display = "none";
-
-    // ❌ remove scratch layer
-    canvas.style.display = "none";
-
-    // ✅ show revealed state inside card
-    const card = document.querySelector(".scratch-card");
-    card.classList.add("revealed");
-
-    document.getElementById("scratchDate").style.opacity = "1";
-
-    // ✅ enable next section
-    window.unlocked = true;
-
-    // ✅ show countdown
-    const countdownEl = document.getElementById("countdown");
-    countdownEl.style.display = "block";
-    countdownEl.classList.add("show");
-
-animateCountdown();
-
-}
-let isDrawing=false;
-
-function startCelebration(){
-
-    function createWave(type){
-        for(let i=0;i<15;i++){
-            let s=document.createElement("div");
-
-            let cls = "gold";
-            if(type==="pink") cls="pink";
-            if(type==="mix") cls = Math.random()>0.5 ? "gold":"pink";
-
-            s.className="sparkle "+cls;
-            s.style.left=Math.random()*100+"vw";
-            s.style.top="-20px";
-            s.style.animationDuration=(4+Math.random()*3)+"s";
-            s.style.animationDelay=(Math.random()*1.5)+"s";
-
-            document.body.appendChild(s);
-            setTimeout(()=>s.remove(),7000);
-        }
-    }
-
-    createWave("gold");
-    setTimeout(()=>createWave("mix"),1200);
-    setTimeout(()=>createWave("pink"),2400);
-}
-
-let scratchedPixels = 0;
-let unlockTriggered = false;
-let celebrationTriggered = false;
-
-let revealed = false; // ✅ ADD HERE
-
-function updateCountdown(){
-    const weddingDate = new Date("May 15, 2026 18:15:00").getTime();
-    const now = new Date().getTime();
-
-    const diff = weddingDate - now;
-
-    if(diff <= 0){
-        document.getElementById("countdown").innerText = "💍 It's Wedding Time!";
-        return;
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    document.getElementById("countdown").innerText =
-        `${days}d • ${hours}h • ${minutes}m • ${seconds}s`;
-}
-
-
-function draw(x,y){
-if(revealed) return; // 🔥 ADD THIS LINE (VERY IMPORTANT)
-
-    ctx.globalCompositeOperation="destination-out";
-    ctx.beginPath();
-    ctx.arc(x,y,14,0,Math.PI*2);
-    ctx.fill();
-
-    scratchedPixels++;
-
-   let percent = scratchedPixels / (canvas.width * canvas.height / 25);
-// 🎉 trigger when text becomes slightly visible
-if(percent > 0.15 && !celebrationTriggered){
-    celebrationTriggered = true;
-    startCelebration();
-}
-
-
-
-    if(scratchedPixels > 80 && !unlockTriggered){
-
-        unlockTriggered = true;
-
-        const card = document.querySelector(".scratch-card");
-
-        canvas.style.opacity = "0";
-        card.classList.add("revealed");
-
-        document.getElementById("scratchDate").style.opacity = "1";
-
-        startCelebration();
-        window.unlocked = true;
-
-        localStorage.setItem("dateRevealed", "true");
-
-// delay countdown (smooth entry)
-setTimeout(() => {
-
-    const countdownEl = document.getElementById("countdown");
-
-    countdownEl.style.display = "block";
-    countdownEl.classList.add("show");
-
-    animateCountdown(); // 👈 animated version
-
-}, 200); // adjust delay (500–800 best)
-}
-}
-// ✅ CORRECT PLACE (ONLY ONCE)
-
-canvas.addEventListener("mousedown",()=>isDrawing=true);
-canvas.addEventListener("mouseup",()=>isDrawing=false);
-
-canvas.addEventListener("mousemove",(e)=>{
-    if(!isDrawing) return;
-    const rect=canvas.getBoundingClientRect();
-    draw(e.clientX-rect.left,e.clientY-rect.top);
-});
-
-// 📱 mobile
-canvas.addEventListener("touchstart",(e)=>{
-    e.preventDefault();
-    isDrawing = true;
-}, { passive:false });
-
-canvas.addEventListener("touchend",(e)=>{
-    e.preventDefault();
-    isDrawing = false;
-}, { passive:false });
-canvas.addEventListener("touchmove",(e)=>{
-    e.preventDefault(); // 🔥 THIS STOPS SCREEN SHAKE
-
-    const rect = canvas.getBoundingClientRect();
-    const t = e.touches[0];
-
-    draw(t.clientX - rect.left, t.clientY - rect.top);
-}, { passive: false }); // 🔥 VERY IMPORTANT
-function animateCountdown(){
-
-    const weddingDate = new Date("May 15, 2026 18:15:00").getTime();
-    const now = new Date().getTime();
-    const diff = weddingDate - now;
-
-    if(diff <= 0){
-        document.getElementById("countdown").innerText = "💍 It's Wedding Time!";
-        return;
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    const el = document.getElementById("countdown");
-
-    function updateText(text){
-        el.style.opacity = 0;
-
-        setTimeout(() => {
-            el.innerText = text;
-            el.style.opacity = 1;
-        }, 120);
-    }
-
-    updateText(`${days}d`);
-
-    setTimeout(() => {
-        updateText(`${days}d • ${hours}h`);
-    }, 200);
-
-    setTimeout(() => {
-        updateText(`${days}d • ${hours}h • ${minutes}m`);
-    }, 400);
-
-    setTimeout(() => {
-        updateText(`${days}d • ${hours}h • ${minutes}m • ${seconds}s`);
-
-        // start live countdown after animation
-        setInterval(updateCountdown, 1000);
-
-    }, 600);
-}
-// 🌸 PETALS (ENTRY ONLY)
-function createPetal(){
-
-    const entry = document.getElementById("entry");
-
-    if(!entry || entry.style.display === "none") return;
-
-    const p = document.createElement("div");
-    p.className = "petal";
-
-    p.style.left = Math.random() * 100 + "%";
-    p.style.top = "-10px";
-    p.style.animationDuration = (6 + Math.random() * 4) + "s";
-
-    entry.appendChild(p);
-
-    setTimeout(() => p.remove(), 9000);
-}
-
-for(let i = 0; i < 8; i++){
-    createPetal();
-}
-
-// 🌸 then continue smoothly
-setInterval(createPetal, 900);
-function openVideo(){
-    window.open("https://youtu.be/JSl1R7Yf4wA", "_blank");
-}
 document.addEventListener("DOMContentLoaded", () => {
 
     const toggleBtn = document.getElementById("musicToggle");
     const music = document.getElementById("bgMusic");
 
     if (!toggleBtn || !music) return;
-
     toggleBtn.onclick = () => {
-        music.muted = !music.muted;
-        toggleBtn.innerText = music.muted ? "🔇" : "🔊";
-    };
+        if (music.paused) {
+        music.play();
+        toggleBtn.innerText = "🔊";
+    } else {
+        music.pause();
+        toggleBtn.innerText = "🔇";
+    }
+
+};
 
     let wasPlaying = false;
 
@@ -1491,15 +298,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-document.addEventListener("click", () => {
-    music.play().catch(() => {});
-});
-window.addEventListener("load", () => {
-    document.body.classList.add("loaded");
-});
 </script>
-<audio id="bgMusic" loop>
-    <source src="song.mp3" type="audio/mpeg">
+<audio id="bgMusic" loop preload="auto">
+    <source src="./song.mp3" type="audio/mpeg">
 </audio>
 </body>
 </html>

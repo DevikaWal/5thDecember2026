@@ -1,0 +1,365 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fdf7f5;
+    overflow-x: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+body.loaded {
+    opacity: 1;
+}
+
+
+html,
+body {
+    scroll-behavior: smooth;
+
+    overscroll-behavior: none;
+}
+
+
+
+/* =========================================================
+   ENTRANCE PAGE
+========================================================= */
+
+#entry {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #000;
+}
+
+
+
+/* =========================================================
+   ENTRANCE PHOTO
+========================================================= */
+
+.entry-photo {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    z-index: 0;
+}
+
+
+
+/* =========================================================
+   DARK PHOTO OVERLAY
+========================================================= */
+
+.entry-photo-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.48);
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+
+/* =========================================================
+   ENTRANCE CONTENT
+========================================================= */
+
+.entry-content {
+
+    position: absolute;
+
+    z-index: 2;
+
+    bottom: 70px;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 20px;
+
+    animation:
+        entranceFade
+        3s ease
+        forwards;
+}
+
+
+
+/* =========================================================
+   OPEN INVITATION BUTTON
+========================================================= */
+
+.open-btn {
+
+    padding: 13px 32px;
+
+    border:
+        1px solid
+        rgba(255, 215, 120, 0.75);
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 236, 170, 0.35),
+            rgba(212, 175, 55, 0.22),
+            rgba(255, 245, 200, 0.30)
+        );
+
+    backdrop-filter: blur(8px);
+
+    -webkit-backdrop-filter: blur(8px);
+
+    color: #fff8dc;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+
+/* Button hover */
+
+.open-btn:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 230, 150, 0.55),
+            rgba(212, 175, 55, 0.40),
+            rgba(255, 245, 200, 0.50)
+        );
+
+    border-color:
+        rgba(255, 225, 140, 0.95);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        inset 0 1px 2px rgba(255,255,255,0.7),
+        0 6px 25px rgba(212,175,55,0.40);
+}
+
+
+
+/* Button press */
+
+.open-btn:active {
+
+    transform:
+        scale(0.97);
+}
+
+
+
+/* =========================================================
+   WEDDING LOGO
+========================================================= */
+
+.entry-logo {
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 50%;
+
+    width: 400px;
+
+    height: 400px;
+
+    object-fit: contain;
+
+    z-index: 3;
+
+    filter:
+        drop-shadow(
+            0 4px 12px
+            rgba(0,0,0,0.7)
+        );
+
+    opacity: 0;
+
+    animation:
+        logoEntrance
+        3s ease
+        forwards;
+}
+
+
+
+/* =========================================================
+   LOGO ANIMATION
+========================================================= */
+
+@keyframes logoEntrance {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, 0);
+    }
+
+}
+
+
+
+/* =========================================================
+   BUTTON ANIMATION
+========================================================= */
+
+@keyframes entranceFade {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+
+/* =========================================================
+   MUSIC TOGGLE
+========================================================= */
+
+#musicToggle {
+
+    display: none;
+
+    position: fixed;
+
+    bottom: 20px;
+
+    right: 20px;
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 0, 0, 0.65);
+
+    color: #ffd700;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    z-index: 100000;
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+
+    #entry {
+
+        background-position:
+            center center;
+    }
+
+
+    .open-btn {
+
+        padding:
+            12px 28px;
+
+        font-size:
+            12px;
+    }
+
+
+    .entry-logo {
+
+        top: 50px;
+
+        width: 250px;
+
+        height: 250px;
+    }
+
+}

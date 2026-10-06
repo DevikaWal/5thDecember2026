@@ -1,0 +1,837 @@
+/* =========================================================
+   WELCOME PAGE
+   ========================================================= */
+
+#welcomePage {
+    display: none;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    background: #f7f1e5;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+#welcomePage.active {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   PAPER BACKGROUND
+   ========================================================= */
+
+.welcome-paper {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background:
+        radial-gradient(ellipse at 75% 20%,
+            rgba(255, 255, 255, 0.55) 0%,
+            rgba(255, 255, 255, 0) 38%),
+
+        radial-gradient(ellipse at 85% 85%,
+            rgba(201, 161, 112, 0.12) 0%,
+            rgba(201, 161, 112, 0) 35%),
+
+        radial-gradient(ellipse at 15% 75%,
+            rgba(170, 122, 100, 0.10) 0%,
+            rgba(170, 122, 100, 0) 32%),
+
+        #f7f1e5;
+}
+
+.welcome-paper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.14;
+
+    background-image:
+        repeating-radial-gradient(circle at 0 0,
+            rgba(90, 60, 40, 0.12) 0,
+            rgba(90, 60, 40, 0.12) 0.5px,
+            transparent 0.7px,
+            transparent 3px);
+
+    mix-blend-mode: multiply;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+.welcome-layout {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: 47% 53%;
+
+    width: 100%;
+
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+
+/* =========================================================
+   LEFT PHOTO
+   ========================================================= */
+
+.welcome-photo-side {
+    position: relative;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    overflow: hidden;
+
+    z-index: 2;
+}
+
+.welcome-photo-side img.main-wedding-photo {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center 52%;
+
+    display: block;
+}
+
+
+/* Subtle photo overlay */
+
+.welcome-photo-side::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(90deg,
+            rgba(40, 20, 10, 0.05),
+            transparent 35%,
+            transparent 75%,
+            rgba(40, 20, 10, 0.08));
+
+    pointer-events: none;
+}
+
+
+/* Curved ivory transition */
+
+.welcome-photo-side::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: 5;
+
+    top: -8%;
+    right: -165px;
+
+    width: 300px;
+    height: 116%;
+
+    background: #f7f1e5;
+
+    border-radius: 52% 0 0 52%;
+
+    transform: rotate(5deg);
+
+    box-shadow:
+        -1px 0 0 rgba(196, 154, 74, 0.55);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+   ========================================================= */
+
+.welcome-content-side {
+    position: relative;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 8vw 60px 4vw;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(ellipse at 55% 48%,
+            rgba(255, 250, 239, 0.9),
+            rgba(247, 241, 229, 0.95) 65%,
+            rgba(238, 224, 201, 0.75));
+}
+
+
+/* =========================================================
+   MAIN TEXT CONTAINER
+   ========================================================= */
+
+.welcome-content {
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+    max-width: 620px;
+
+    text-align: center;
+
+    color: #722e2e;
+}
+
+
+/* =========================================================
+   TOP ORNAMENT
+   ========================================================= */
+
+.top-ornament {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 28px;
+}
+
+.top-ornament .ornament-line {
+    width: 70px;
+    height: 1px;
+
+    background: #c49a4a;
+}
+
+.top-ornament .ornament-symbol {
+    position: relative;
+
+    width: 25px;
+    height: 25px;
+}
+
+.top-ornament .ornament-symbol::before {
+    content: "♧";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%) rotate(180deg);
+
+    color: #c49a4a;
+
+    font-size: 25px;
+
+    font-family: Georgia, serif;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.welcome-intro {
+    margin: 0;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    line-height: 2.15;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #722e2e;
+}
+
+
+/* =========================================================
+   NAMES
+   ========================================================= */
+
+.welcome-names {
+    margin: 24px 0 10px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(48px, 5vw, 82px);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    letter-spacing: -1px;
+
+    color: #722e2e;
+}
+
+
+/* Ampersand */
+
+.welcome-names .ampersand {
+    display: inline-block;
+
+    margin: 0 12px;
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 0.75em;
+
+    color: #c49a4a;
+
+    vertical-align: middle;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MIDDLE ORNAMENT
+   ========================================================= */
+
+.middle-ornament {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 26px auto 28px;
+}
+
+.middle-ornament .line {
+    width: 60px;
+    height: 1px;
+
+    background: #c49a4a;
+}
+
+.middle-ornament .diamond {
+    width: 7px;
+    height: 7px;
+
+    background: #c49a4a;
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   INVITATION MESSAGE
+   ========================================================= */
+
+.welcome-message {
+    max-width: 430px;
+
+    margin: 0 auto;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 300;
+
+    line-height: 2;
+
+    letter-spacing: 0.3px;
+
+    color: #674e42;
+}
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
+.welcome-date {
+    margin-top: 30px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    color: #722e2e;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   BOTANICAL DECORATIONS
+   ========================================================= */
+
+.botanical {
+    position: absolute;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    fill: none;
+
+    stroke: #66733a;
+
+    stroke-width: 1.4;
+
+    opacity: 0.72;
+}
+
+
+/* Top right */
+
+.botanical-top {
+    width: 185px;
+    height: 230px;
+
+    top: -10px;
+    right: -10px;
+
+    transform: rotate(7deg);
+}
+
+
+/* Bottom left */
+
+.botanical-bottom {
+    width: 230px;
+    height: 250px;
+
+    bottom: -20px;
+    left: -25px;
+
+    transform: rotate(-8deg);
+}
+
+
+/* =========================================================
+   GOLD CORNER DETAILS
+   ========================================================= */
+
+.corner-line {
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.corner-line::before,
+.corner-line::after {
+    content: "";
+
+    position: absolute;
+
+    background: #c49a4a;
+}
+
+
+/* Top right */
+
+.corner-top-right {
+    top: 0;
+    right: 0;
+}
+
+.corner-top-right::before {
+    width: 1px;
+    height: 95px;
+
+    right: 25px;
+    top: -5px;
+
+    transform: rotate(-25deg);
+}
+
+.corner-top-right::after {
+    width: 1px;
+    height: 110px;
+
+    right: 40px;
+    top: -15px;
+
+    transform: rotate(-25deg);
+}
+
+
+/* Bottom left */
+
+.corner-bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.corner-bottom-left::before {
+    width: 1px;
+    height: 110px;
+
+    left: 35px;
+    bottom: -10px;
+
+    transform: rotate(-25deg);
+}
+
+.corner-bottom-left::after {
+    width: 1px;
+    height: 85px;
+
+    left: 52px;
+    bottom: -5px;
+
+    transform: rotate(-25deg);
+}
+
+
+/* =========================================================
+   SMALL FLOATING LEAVES
+   ========================================================= */
+
+.floating-leaf {
+    position: absolute;
+
+    z-index: 3;
+
+    color: #66733a;
+
+    font-size: 18px;
+
+    opacity: 0.55;
+
+    pointer-events: none;
+}
+
+.leaf-one {
+    top: 18%;
+    right: 14%;
+
+    transform: rotate(-25deg);
+}
+
+.leaf-two {
+    bottom: 18%;
+    right: 12%;
+
+    transform: rotate(30deg);
+}
+
+.leaf-three {
+    top: 62%;
+    left: 10%;
+
+    transform: rotate(-35deg);
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    #welcomePage {
+        min-height: 100svh;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+
+    /* Stack photo and invitation */
+
+    .welcome-layout {
+        display: flex;
+
+        flex-direction: column;
+
+        min-height: 100svh;
+    }
+
+
+    /* Photo */
+
+    .welcome-photo-side {
+        width: 100%;
+
+        height: 48svh;
+
+        min-height: 360px;
+
+        flex-shrink: 0;
+    }
+
+    .welcome-photo-side img.main-wedding-photo {
+        object-position: center 48%;
+    }
+
+
+    /* Curved mobile transition */
+
+    .welcome-photo-side::after {
+        top: auto;
+
+        right: -8%;
+
+        bottom: -65px;
+
+        width: 116%;
+
+        height: 120px;
+
+        border-radius: 50% 50% 0 0;
+
+        border-top: 1px solid #c49a4a;
+
+        border-left: none;
+
+        transform: none;
+
+        box-shadow: none;
+    }
+
+
+    /* Content */
+
+    .welcome-content-side {
+        min-height: 52svh;
+
+        padding: 42px 25px 75px;
+
+        align-items: flex-start;
+
+        background:
+            radial-gradient(ellipse at center top,
+                #fffaf0 0%,
+                #f7f1e5 70%);
+    }
+
+
+    .welcome-content {
+        max-width: 500px;
+
+        margin: 0 auto;
+    }
+
+
+    /* Top ornament */
+
+    .top-ornament {
+        margin-bottom: 20px;
+
+        gap: 8px;
+    }
+
+    .top-ornament .ornament-line {
+        width: 45px;
+    }
+
+
+    /* Intro */
+
+    .welcome-intro {
+        font-size: 9px;
+
+        line-height: 2;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    /* Names */
+
+    .welcome-names {
+        margin: 18px 0 8px;
+
+        font-size: clamp(42px, 12vw, 62px);
+
+        line-height: 1.05;
+
+        letter-spacing: -0.5px;
+    }
+
+    .welcome-names .ampersand {
+        margin: 0 7px;
+
+        font-size: 0.7em;
+    }
+
+
+    /* Middle ornament */
+
+    .middle-ornament {
+        margin: 20px auto 22px;
+    }
+
+    .middle-ornament .line {
+        width: 42px;
+    }
+
+
+    /* Message */
+
+    .welcome-message {
+        max-width: 330px;
+
+        font-size: 12px;
+
+        line-height: 1.8;
+    }
+
+
+    /* Date */
+
+    .welcome-date {
+        margin-top: 22px;
+
+        font-size: 12px;
+
+        letter-spacing: 2px;
+    }
+
+
+    /* Botanical */
+
+    .botanical-top {
+        width: 115px;
+        height: 150px;
+
+        top: -10px;
+        right: -10px;
+    }
+
+    .botanical-bottom {
+        width: 145px;
+        height: 170px;
+
+        bottom: -15px;
+        left: -25px;
+    }
+
+
+    /* Corner details */
+
+    .corner-line {
+        width: 80px;
+        height: 80px;
+    }
+
+    .corner-top-right::before {
+        height: 65px;
+
+        right: 15px;
+    }
+
+    .corner-top-right::after {
+        height: 70px;
+
+        right: 27px;
+    }
+
+    .corner-bottom-left::before {
+        height: 70px;
+
+        left: 22px;
+    }
+
+    .corner-bottom-left::after {
+        height: 60px;
+
+        left: 34px;
+    }
+
+
+    /* Floating leaves */
+
+    .floating-leaf {
+        font-size: 13px;
+    }
+
+    .leaf-one {
+        top: 20%;
+        right: 8%;
+    }
+
+    .leaf-two {
+        bottom: 13%;
+        right: 7%;
+    }
+
+    .leaf-three {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+    .welcome-photo-side {
+        height: 45svh;
+
+        min-height: 320px;
+    }
+
+    .welcome-content-side {
+        padding: 35px 18px 65px;
+    }
+
+    .welcome-names {
+        font-size: 42px;
+    }
+
+    .welcome-intro {
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+    .welcome-message {
+        font-size: 11px;
+    }
+
+    .welcome-date {
+        font-size: 10px;
+    }
+}

@@ -8,6 +8,8 @@
      <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- PRELOAD ENTRANCE IMAGE -->
+    <link rel="preload" as="image" href="photos/entrance.jpg">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap"
         rel="stylesheet">
@@ -16,276 +18,213 @@
 
     <!-- Entrance Page -->
     <link rel="stylesheet" href="css/entrance.css">
-
     <!-- Welcome Page -->
     <link rel="stylesheet" href="css/welcomepage.css">
 </head>
 <body>
-
-
     <!-- MUSIC TOGGLE -->
-
     <button id="musicToggle">
         🔊
     </button>
 
-
-
     <!-- ENTRANCE PAGE -->
-
     <div id="entry">
 
-
         <!-- Entrance Photo -->
-
-        <img src="photos/entrance.jpg" class="entry-photo" alt="Wedding">
-
-
+        <img src="photos/entrance.jpg" class="entry-photo" alt="Wedding" fetchpriority="high" decoding="async">
         <!-- Dark Overlay -->
-
         <div class="entry-photo-overlay"></div>
 
-
         <!-- Wedding Logo -->
-
         <img src="photos/ds-logo.png" class="entry-logo" alt="Devika and Sushant">
 
-
         <!-- Open Invitation -->
-
         <div class="entry-content">
 
             <button class="open-btn" onclick="enterSite()">
                 Open Invitation
             </button>
-
         </div>
-
     </div>
 
-
-
     <!-- WELCOME PAGE -->
+    <!-- ==================== WELCOME PAGE ==================== -->
 
-    <section id="welcomePage">
+<section id="welcomePage">
 
+    <div class="welcome-paper"></div>
 
-        <!-- Soft paper background -->
+    <div class="welcome-layout">
 
-        <div class="welcome-paper"></div>
-
-
-        <div class="welcome-layout">
-
-
-            <!-- LEFT — WEDDING PHOTO -->
-
-            <div class="welcome-photo-side">
-
-
-                <img src="photos/welcomepage.JPG" class="main-wedding-photo" alt="Devika and Sushant">
-
-
-            </div>
-
-
-
-            <!-- RIGHT — INVITATION CONTENT -->
-
-            <div class="welcome-content-side">
-
-
-                <!-- Top-right decorative corner -->
-
-                <div class="corner-line corner-top-right"></div>
-
-
-
-                <!-- TOP BOTANICAL DECORATION -->
-
-                <svg class="botanical botanical-top" viewBox="0 0 200 250" aria-hidden="true">
-
-                    <path d="M190 5 C155 35 130 65 110 105 C90 145 72 190 35 245" />
-
-                    <path d="M148 48 C125 45 108 35 94 20" />
-
-                    <path d="M133 70 C153 68 170 60 184 48" />
-
-                    <path d="M116 102 C93 97 76 87 61 72" />
-
-                    <path d="M101 126 C124 125 143 116 158 103" />
-
-                    <path d="M79 163 C59 158 43 148 30 134" />
-
-                    <path d="M64 190 C84 190 101 182 115 169" />
-
-
-                    <ellipse cx="91" cy="22" rx="9" ry="4" transform="rotate(25 91 22)" />
-
-                    <ellipse cx="174" cy="53" rx="9" ry="4" transform="rotate(-25 174 53)" />
-
-                    <ellipse cx="59" cy="70" rx="10" ry="4" transform="rotate(30 59 70)" />
-
-                    <ellipse cx="149" cy="105" rx="10" ry="4" transform="rotate(-30 149 105)" />
-
-                    <ellipse cx="27" cy="132" rx="10" ry="4" transform="rotate(30 27 132)" />
-
-                </svg>
-
-
-
-                <!-- =================================================
-                     MAIN INVITATION
-                     ================================================= -->
-
-                <div class="welcome-content">
-
-
-                    <!-- Top ornament -->
-
-                    <div class="top-ornament">
-
-                        <span class="ornament-line"></span>
-
-                        <span class="ornament-symbol"></span>
-
-                        <span class="ornament-line"></span>
-
-                    </div>
-
-
-
-                    <!-- Invitation introduction -->
-
-                    <p class="welcome-intro">
-
-                        You are cordially invited
-
-                        <br>
-
-                        to the wedding of
-
-                    </p>
-
-
-
-                    <!-- Names -->
-
-                    <h1 class="welcome-names">
-
-                        Devika
-
-                        <span class="ampersand">
-                            &amp;
-                        </span>
-
-                        Sushant
-
-                    </h1>
-
-
-
-                    <!-- Middle ornament -->
-
-                    <div class="middle-ornament">
-
-                        <span class="line"></span>
-
-                        <span class="diamond"></span>
-
-                        <span class="line"></span>
-
-                    </div>
-
-
-
-                    <!-- Invitation message -->
-
-                    <p class="welcome-message">
-
-                        Together with our families, we joyfully invite
-                        you to celebrate the beginning of our forever.
-
-                    </p>
-
-
-
-                    <!-- Wedding date -->
-
-                    <div class="welcome-date">
-
-                        5 December 2026
-
-                    </div>
-
-
-                </div>
-
-
-
-                <!-- =================================================
-                     BOTTOM BOTANICAL DECORATION
-                     ================================================= -->
-
-                <svg class="botanical botanical-bottom" viewBox="0 0 250 270" aria-hidden="true">
-
-                    <path d="M12 265 C45 230 68 190 92 150 C117 108 145 68 220 20" />
-
-                    <path d="M58 218 C38 214 22 204 10 188" />
-
-                    <path d="M77 187 C100 186 118 177 132 162" />
-
-                    <path d="M99 148 C78 144 62 134 49 119" />
-
-                    <path d="M119 116 C142 116 160 107 174 93" />
-
-                    <path d="M146 78 C127 74 112 65 100 51" />
-
-                    <path d="M170 56 C191 57 207 49 222 35" />
-
-
-                    <ellipse cx="13" cy="188" rx="12" ry="5" transform="rotate(35 13 188)" />
-
-                    <ellipse cx="132" cy="162" rx="12" ry="5" transform="rotate(-35 132 162)" />
-
-                    <ellipse cx="50" cy="119" rx="12" ry="5" transform="rotate(30 50 119)" />
-
-                    <ellipse cx="173" cy="93" rx="12" ry="5" transform="rotate(-30 173 93)" />
-
-                    <ellipse cx="100" cy="51" rx="11" ry="5" transform="rotate(30 100 51)" />
-
-                    <ellipse cx="221" cy="35" rx="11" ry="5" transform="rotate(-25 221 35)" />
-
-                </svg>
-
-
-
-                <!-- Bottom-left decorative corner -->
-
-                <div class="corner-line corner-bottom-left"></div>
-
-
-
-                <!-- Small floating botanical details -->
-
-                <span class="floating-leaf leaf-one">
-                    ❧
-                </span>
-
-                <span class="floating-leaf leaf-two">
-                    ❧
-                </span>
-
-                <span class="floating-leaf leaf-three">
-                    ❧
-                </span>
-
-
-            </div>
-
+        <!-- LEFT: WEDDING PHOTO -->
+        <div class="welcome-photo-side">
+        <img src="photos/welcomepage.JPG"
+            class="main-wedding-photo"
+            alt="Devika and Sushant"
+            loading="lazy"
+             decoding="async"
+        >
         </div>
 
-    </section>
+        <!-- RIGHT: INVITATION -->
+        <div class="welcome-content-side">
+
+            <!-- Fine gold corner details -->
+            <div class="corner-line corner-top-right"></div>
+            <div class="corner-line corner-bottom-left"></div>
+
+            <!-- TOP-RIGHT BOTANICAL BRANCH -->
+            <svg class="botanical botanical-top"
+                 viewBox="0 0 200 250"
+                 aria-hidden="true">
+
+                <g class="branch-drawing">
+                    <!-- Main stem -->
+                    <path class="branch-stem"
+                          d="M195 0 C165 38 145 78 120 118 C98 157 70 198 35 250"/>
+
+                    <!-- Leaves -->
+                    <path class="leaf-fill"
+                          d="M164 42 C137 42 120 26 112 8 C136 12 155 22 164 42Z"/>
+
+                    <path class="leaf-fill leaf-light"
+                          d="M153 58 C175 56 190 43 197 26 C177 31 160 42 153 58Z"/>
+
+                    <path class="leaf-fill"
+                          d="M139 82 C112 80 95 63 90 45 C114 51 132 64 139 82Z"/>
+
+                    <path class="leaf-fill leaf-light"
+                          d="M128 99 C151 99 169 85 179 68 C156 73 139 84 128 99Z"/>
+
+                    <path class="leaf-fill"
+                          d="M109 130 C85 125 72 108 69 91 C91 98 104 111 109 130Z"/>
+
+                    <path class="leaf-fill leaf-light"
+                          d="M99 146 C121 145 139 133 150 116 C128 121 111 132 99 146Z"/>
+
+                    <path class="leaf-fill"
+                          d="M80 176 C58 170 47 153 45 137 C65 144 77 159 80 176Z"/>
+
+                    <path class="leaf-fill leaf-light"
+                          d="M69 192 C90 190 105 177 114 161 C94 167 79 178 69 192Z"/>
+
+                    <!-- Delicate gold seed details -->
+                    <path class="branch-accent"
+                          d="M175 36 Q183 29 187 19"/>
+
+                    <ellipse class="seed"
+                             cx="182" cy="29"
+                             rx="2.5" ry="5"
+                             transform="rotate(35 182 29)"/>
+
+                    <ellipse class="seed"
+                             cx="91" cy="104"
+                             rx="2.5" ry="5"
+                             transform="rotate(-25 91 104)"/>
+
+                    <ellipse class="seed"
+                             cx="54" cy="151"
+                             rx="2.5" ry="5"
+                             transform="rotate(25 54 151)"/>
+                </g>
+            </svg>
+
+            <!-- INVITATION TEXT -->
+            <div class="welcome-content">
+
+                <div class="top-ornament reveal-item">
+                    <span class="ornament-line"></span>
+                    <span class="ornament-symbol"></span>
+                    <span class="ornament-line"></span>
+                </div>
+
+                <p class="welcome-intro reveal-item">
+                    You are cordially invited
+                    <br>
+                    to the wedding of
+                </p>
+
+                <h1 class="welcome-names reveal-item">
+                    Devika
+                    <span class="ampersand">&amp;</span>
+                    Sushant
+                </h1>
+
+                <div class="middle-ornament reveal-item">
+                    <span class="line"></span>
+                    <span class="diamond"></span>
+                    <span class="line"></span>
+                </div>
+
+                <p class="welcome-message reveal-item">
+                    Together with our families, we joyfully invite
+                    you to celebrate the beginning of our forever.
+                </p>
+
+            </div>
+
+            <!-- BOTTOM-LEFT BOTANICAL BRANCH -->
+            <svg class="botanical botanical-bottom"
+                 viewBox="0 0 250 270"
+                 aria-hidden="true">
+
+                <g class="branch-drawing">
+                    <path class="branch-stem"
+                          d="M0 270 C40 230 67 193 95 153 C124 111 160 66 235 12"/>
+
+                    <path class="leaf-fill"
+                          d="M42 229 C19 227 6 211 2 194 C23 201 37 213 42 229Z"/>
+
+                    <path class="leaf-fill leaf-light"
+                          d="M53 215 C75 214 91 199 98 181 C77 188 61 200 53 215Z"/>
+
+                    <path class="leaf-fill"
+                          d="M75 183 C51 178 39 160 38 143 C59 151 72 165 75 183Z"/>
+
+                    <path class="leaf-fill leaf-light"
+                          d="M86 168 C108 166 125 152 135 135 C113 140 97 153 86 168Z"/>
+
+                    <path class="leaf-fill"
+                          d="M111 133 C88 127 77 110 77 94 C97 101 109 116 111 133Z"/>
+
+                    <path class="leaf-fill leaf-light"
+                          d="M123 117 C144 115 160 100 168 83 C148 89 133 101 123 117Z"/>
+
+                    <path class="leaf-fill"
+                          d="M151 83 C130 76 120 60 121 44 C140 52 150 67 151 83Z"/>
+
+                    <path class="leaf-fill leaf-light"
+                          d="M163 68 C183 65 199 52 208 36 C188 41 174 53 163 68Z"/>
+
+                    <!-- Fine leaf veins -->
+                    <path class="leaf-vein"
+                          d="M10 201 Q25 211 38 225
+                             M43 222 Q68 210 94 186
+                             M45 151 Q61 164 71 178
+                             M80 101 Q96 115 106 129
+                             M125 51 Q140 65 147 79"/>
+
+                    <!-- Small gold buds -->
+                    <ellipse class="seed"
+                             cx="27" cy="190"
+                             rx="2.5" ry="5"
+                             transform="rotate(-25 27 190)"/>
+
+                    <ellipse class="seed"
+                             cx="102" cy="146"
+                             rx="2.5" ry="5"
+                             transform="rotate(25 102 146)"/>
+
+                    <ellipse class="seed"
+                             cx="193" cy="42"
+                             rx="2.5" ry="5"
+                             transform="rotate(35 193 42)"/>
+                </g>
+            </svg>
+
+        </div>
+    </div>
+</section>
 
 
 
@@ -293,11 +232,9 @@
          BACKGROUND MUSIC
          ===================================================== -->
 
-    <audio id="bgMusic" loop preload="auto">
-
-        <source src="./song.mp3" type="audio/mpeg">
-
-    </audio>
+        <audio id="bgMusic" loop preload="none">
+            <source src="./song.mp3" type="audio/mpeg">
+        </audio>
 
 
 
@@ -305,8 +242,7 @@
          JAVASCRIPT
          ===================================================== -->
 
-    <script src="js/entrance.js"></script>
-
+    <script src="js/entrance.js" defer></script>
 
 </body>
 

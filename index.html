@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/entrance.css">
     <!-- Welcome Page -->
     <link rel="stylesheet" href="css/welcomepage.css">
+    <link rel="stylesheet" href="css/ourStory.css">
 </head>
 <body>
     <!-- MUSIC TOGGLE -->
@@ -225,6 +226,191 @@
     </div>
 </section>
 
+<!-- ==================== OUR STORY SECTION ==================== -->
+
+<section id="ourStory">
+
+    <div class="story-container">
+
+        <!-- LEFT: FEATURED COUPLE PHOTO -->
+        <div class="story-visual">
+
+            <div class="story-photo-frame">
+                <img
+                    src="photos/our-story-main.jpg"
+                    alt="Devika and Sushant in traditional attire"
+                    class="story-main-photo"
+                    loading="lazy"
+                    decoding="async"
+                >
+            </div>
+
+            <!-- Decorative botanical branch -->
+            <svg class="story-botanical"
+                 viewBox="0 0 160 220"
+                 aria-hidden="true">
+
+                <path class="story-stem"
+                      d="M8 215 C45 170 65 125 90 80 C110 45 130 25 150 8"/>
+
+                <path class="story-leaf"
+                      d="M48 164 C25 161 14 145 13 130 C33 136 44 148 48 164Z"/>
+
+                <path class="story-leaf story-leaf-light"
+                      d="M59 146 C81 144 95 130 101 113 C81 119 67 132 59 146Z"/>
+
+                <path class="story-leaf"
+                      d="M82 103 C60 98 50 82 51 67 C70 75 80 88 82 103Z"/>
+
+                <path class="story-leaf story-leaf-light"
+                      d="M94 83 C114 80 128 67 135 51 C115 57 102 69 94 83Z"/>
+
+                <circle class="story-seed" cx="117" cy="39" r="2.5"/>
+                <circle class="story-seed" cx="128" cy="31" r="2"/>
+            </svg>
+
+        </div>
+
+        <!-- RIGHT: OUR STORY -->
+        <div class="story-content">
+
+            <div class="story-ornament" aria-hidden="true">
+                <span></span>
+                <span class="story-diamond"></span>
+                <span></span>
+            </div>
+
+            <p class="story-eyebrow">THE BEGINNING</p>
+
+            <h2 class="story-heading">
+                Our <span>Story</span>
+            </h2>
+
+            <div class="story-divider" aria-hidden="true">
+                <span></span>
+                <span class="story-diamond"></span>
+                <span></span>
+            </div>
+
+            <p class="story-description">
+                What began as a simple conversation slowly turned
+                into countless memories, shared dreams, and a love
+                that feels like home. Through every chapter, we found
+                our greatest adventure in each other.
+            </p>
+
+            <!-- TWO SUPPORTING PHOTOS -->
+
+<!-- OUR STORY PHOTO CAROUSEL -->
+<div class="story-gallery" id="storyGallery" aria-label="Our favourite moments">
+
+    <div class="story-gallery-heading">
+        <span class="story-gallery-kicker">A FEW FAVOURITE MOMENTS</span>
+    </div>
+
+    <div class="story-carousel">
+
+        <button class="story-arrow story-prev"
+                type="button"
+                aria-label="Previous photo">
+            &#8592;
+        </button>
+
+        <div class="story-arch-window">
+            <div class="story-slides">
+
+                <!-- Replace these filenames with your photos -->
+                <figure class="story-slide is-active">
+                    <img src="photos/story-01.jpg"
+                         alt="Devika and Sushant together"
+                         loading="lazy">
+                    <figcaption>A moment to remember</figcaption>
+                </figure>
+
+                <figure class="story-slide">
+                    <img src="photos/story-02.jpg"
+                         alt="Devika and Sushant in traditional attire"
+                         loading="lazy">
+                    <figcaption>Traditions and togetherness</figcaption>
+                </figure>
+
+                <figure class="story-slide">
+                    <img src="photos/story-03.jpg"
+                         alt="Devika and Sushant outdoors"
+                         loading="lazy">
+                    <figcaption>Our little world</figcaption>
+                </figure>
+
+                <figure class="story-slide">
+                    <img src="photos/story-04.jpg"
+                         alt="Another favourite memory of the couple"
+                         loading="lazy">
+                    <figcaption>And so the story continues</figcaption>
+                </figure>
+
+            </div>
+        </div>
+
+        <button class="story-arrow story-next"
+                type="button"
+                aria-label="Next photo">
+            &#8594;
+        </button>
+
+    </div>
+
+    <div class="story-gallery-footer">
+        <button class="story-play-toggle"
+                type="button"
+                aria-label="Pause slideshow"
+                aria-pressed="false">
+            <span class="story-play-icon" aria-hidden="true">Ⅱ</span>
+        </button>
+
+        <div class="story-progress"
+             role="group"
+             aria-label="Choose a photo">
+            <button class="story-dot is-active"
+                    type="button"
+                    aria-label="Show photo 1"
+                    aria-current="true"></button>
+            <button class="story-dot"
+                    type="button"
+                    aria-label="Show photo 2"></button>
+            <button class="story-dot"
+                    type="button"
+                    aria-label="Show photo 3"></button>
+            <button class="story-dot"
+                    type="button"
+                    aria-label="Show photo 4"></button>
+        </div>
+
+        <span class="story-count" aria-live="off">01 / 04</span>
+    </div>
+
+</div>
+<!-- END OUR STORY PHOTO CAROUSEL -->
+
+
+            <div class="story-closing">
+                <span class="story-closing-line"></span>
+                <span class="story-heart" aria-hidden="true">♥</span>
+                <span class="story-closing-line"></span>
+            </div>
+
+            <p class="story-closing-text">
+                Different paths, a shared forever.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==================== END OUR STORY ==================== -->
+
+
 
 
     <!-- =====================================================
@@ -242,6 +428,7 @@
          ===================================================== -->
 
     <script src="js/entrance.js" defer></script>
+    <script src="js/storyCarousel.js" defer></script>
 
 </body>
 

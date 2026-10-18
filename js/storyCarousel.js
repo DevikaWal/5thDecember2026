@@ -102,17 +102,10 @@
         syncTimer();
     });
 
-    gallery.addEventListener("mouseenter", () => {
-        hoverPaused = true;
-        syncTimer();
-    });
-
-    gallery.addEventListener("mouseleave", () => {
-        hoverPaused = false;
-        syncTimer();
-    });
-
-    gallery.addEventListener("focusin", () => {
+    gallery.addEventListener("focusin", event => {
+    // Only pause when a keyboard user focuses a control.
+    // Photos themselves should not pause the carousel.
+        if (event.target.closest(".story-slide")) return;
         focusPaused = true;
         syncTimer();
     });

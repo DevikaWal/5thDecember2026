@@ -322,6 +322,10 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 /* Soft caption at the bottom of each photo */

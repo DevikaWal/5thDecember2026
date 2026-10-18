@@ -1,0 +1,677 @@
+
+/* ======================================
+   WEDDING COUNTDOWN
+   Ivory • Burgundy • Antique Gold
+   Desktop • Tablet • Mobile
+====================================== */
+
+#weddingCountdown {
+  --countdown-ivory: #f7f1e5;
+  --countdown-burgundy: #722e2e;
+  --countdown-gold: #c49a4a;
+  --countdown-muted: #75634f;
+  --countdown-leaf: #a88a55;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      rgba(255, 253, 247, 0.7),
+      transparent 72%
+    ),
+    var(--countdown-ivory);
+  color: var(--countdown-burgundy);
+  padding: clamp(55px, 7vw, 100px) clamp(22px, 5vw, 75px);
+}
+
+#weddingCountdown,
+#weddingCountdown * {
+  box-sizing: border-box;
+}
+
+/* ======================================
+   MAIN LAYOUT — DESKTOP
+====================================== */
+
+#weddingCountdown .countdown-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: clamp(30px, 4vw, 65px);
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+#weddingCountdown .countdown-content {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  text-align: center;
+}
+
+/* ======================================
+   ORNAMENTS
+====================================== */
+
+#weddingCountdown .countdown-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 24px;
+  color: var(--countdown-gold);
+}
+
+#weddingCountdown .countdown-ornament span {
+  display: block;
+  width: 65px;
+  height: 1px;
+  background: var(--countdown-gold);
+}
+
+#weddingCountdown .countdown-ornament b {
+  color: var(--countdown-gold);
+  font-size: 11px;
+  font-weight: 400;
+}
+
+/* ======================================
+   EYEBROW
+====================================== */
+
+#weddingCountdown .countdown-eyebrow {
+  margin: 0 0 24px;
+  color: var(--countdown-muted);
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  line-height: 1.8;
+}
+
+/* ======================================
+   MAIN HEADING
+====================================== */
+
+#weddingCountdown .countdown-heading {
+  margin: 0;
+  color: var(--countdown-burgundy);
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -1.5px;
+}
+
+#weddingCountdown .countdown-heading span {
+  display: block;
+  margin-top: 8px;
+  color: var(--countdown-burgundy);
+  font-family: "Great Vibes", "Brush Script MT", cursive;
+  font-size: clamp(66px, 7vw, 104px);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+#weddingCountdown .heading-ornament {
+  margin-top: 22px;
+  margin-bottom: 27px;
+}
+
+/* ======================================
+   WEDDING DATE
+====================================== */
+
+#weddingCountdown .wedding-weekday {
+  margin: 0 0 9px;
+  color: var(--countdown-burgundy);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 4px;
+}
+
+#weddingCountdown .wedding-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 1.4vw, 22px);
+  margin: 0;
+  color: var(--countdown-burgundy);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(40px, 4.8vw, 68px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+
+#weddingCountdown .wedding-date span {
+  color: var(--countdown-gold);
+}
+
+/* ======================================
+   WEDDING MUHURTA
+====================================== */
+
+#weddingCountdown .wedding-muhurta {
+  margin: 12px 0 32px;
+  color: var(--countdown-muted);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+#weddingCountdown .wedding-muhurta span {
+  padding: 0 3px;
+}
+
+#weddingCountdown .wedding-muhurta strong {
+  color: var(--countdown-burgundy);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* ======================================
+   COUNTDOWN TIMER
+====================================== */
+
+#weddingCountdown .countdown-timer {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#weddingCountdown .countdown-box {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 118px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 18px 4px 15px;
+  border: 1px solid var(--countdown-gold);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Decorative diamond corners */
+
+#weddingCountdown .countdown-box::before,
+#weddingCountdown .countdown-box::after {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--countdown-gold);
+  background: var(--countdown-ivory);
+  content: "";
+  transform: rotate(45deg);
+}
+
+#weddingCountdown .countdown-box::before {
+  top: -5px;
+  left: -5px;
+}
+
+#weddingCountdown .countdown-box::after {
+  right: -5px;
+  bottom: -5px;
+}
+
+#weddingCountdown .countdown-box span {
+  display: block;
+  color: var(--countdown-burgundy);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 500;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+#weddingCountdown .countdown-box small {
+  display: block;
+  color: var(--countdown-muted);
+  font-family: "Poppins", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.7px;
+  line-height: 1.4;
+}
+
+/* ======================================
+   CLOSING MESSAGE
+====================================== */
+
+/* Hide any heart and gold lines below timer */
+
+#weddingCountdown .closing-ornament {
+  display: none !important;
+}
+
+#weddingCountdown .countdown-closing {
+  margin: 25px 0 0;
+  color: var(--countdown-burgundy);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(17px, 1.9vw, 25px);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ======================================
+   WEDDING DRAPE — DESKTOP
+====================================== */
+
+#weddingCountdown .countdown-photo-area,
+#weddingCountdown .countdown-drape-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+#weddingCountdown .countdown-drape {
+  display: block;
+  width: 125%;
+  max-width: 760px;
+  height: auto;
+  margin: 0;
+  object-fit: contain;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ======================================
+   BOTANICAL ACCENTS
+   Subtle decorative leaf details
+====================================== */
+
+#weddingCountdown .countdown-photo-area::before {
+  position: absolute;
+  z-index: -1;
+  top: 4%;
+  right: 4%;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    rgba(196, 154, 74, 0.07),
+    transparent 68%
+  );
+  content: "";
+  pointer-events: none;
+}
+
+/* ======================================
+   TABLET
+====================================== */
+
+@media (max-width: 900px) {
+  #weddingCountdown {
+    padding: 58px 24px 0;
+  }
+
+  #weddingCountdown .countdown-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  #weddingCountdown .countdown-content {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding-bottom: 24px;
+  }
+
+  #weddingCountdown .countdown-heading {
+    font-size: clamp(45px, 7vw, 64px);
+  }
+
+  #weddingCountdown .countdown-heading span {
+    font-size: clamp(70px, 10vw, 90px);
+  }
+
+  #weddingCountdown .wedding-date {
+    font-size: clamp(40px, 6vw, 58px);
+  }
+
+  #weddingCountdown .countdown-timer {
+    gap: 9px;
+  }
+
+  #weddingCountdown .countdown-box {
+    min-height: 105px;
+  }
+
+  #weddingCountdown .countdown-box span {
+    font-size: clamp(30px, 5vw, 40px);
+  }
+
+  #weddingCountdown .countdown-photo-area,
+  #weddingCountdown .countdown-drape-area {
+    display: block;
+    width: calc(100% + 48px);
+    max-width: none;
+    margin-left: -24px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  #weddingCountdown .countdown-drape {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+}
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 600px) {
+  #weddingCountdown {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 38px 0 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  #weddingCountdown .countdown-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  #weddingCountdown .countdown-content {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    padding: 0 17px;
+    text-align: center;
+  }
+
+  /* Top ornaments */
+
+  #weddingCountdown .countdown-ornament {
+    gap: 10px;
+    margin-bottom: 19px;
+  }
+
+  #weddingCountdown .countdown-ornament span {
+    width: 46px;
+  }
+
+  #weddingCountdown .countdown-ornament b {
+    font-size: 9px;
+  }
+
+  /* Heading */
+
+  #weddingCountdown .countdown-eyebrow {
+    margin: 0 0 17px;
+    font-size: 9px;
+    letter-spacing: 2.6px;
+    line-height: 1.7;
+  }
+
+  #weddingCountdown .countdown-heading {
+    font-size: clamp(37px, 9.8vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -1px;
+  }
+
+  #weddingCountdown .countdown-heading span {
+    margin-top: 3px;
+    font-size: clamp(60px, 15vw, 76px);
+    line-height: 1.1;
+    letter-spacing: 0;
+  }
+
+  #weddingCountdown .heading-ornament {
+    margin-top: 18px;
+    margin-bottom: 23px;
+  }
+
+  /* Wedding date */
+
+  #weddingCountdown .wedding-weekday {
+    margin: 0 0 7px;
+    font-size: 14px;
+    letter-spacing: 3.5px;
+  }
+
+  #weddingCountdown .wedding-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 2.8vw, 14px);
+    margin: 0;
+    font-size: clamp(35px, 9vw, 43px);
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+  }
+
+  #weddingCountdown .wedding-muhurta {
+    margin: 10px 0 24px;
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+}
+
+  #weddingCountdown .wedding-muhurta strong {
+    font-size: 16px;
+}
+
+  /* Countdown boxes */
+
+  #weddingCountdown .countdown-timer {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 7px;
+    width: 100%;
+  }
+
+  #weddingCountdown .countdown-box {
+    min-width: 0;
+    min-height: 82px;
+    padding: 12px 2px 10px;
+    gap: 7px;
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  #weddingCountdown .countdown-box::before,
+  #weddingCountdown .countdown-box::after {
+    width: 6px;
+    height: 6px;
+  }
+
+  #weddingCountdown .countdown-box::before {
+    top: -4px;
+    left: -4px;
+  }
+
+  #weddingCountdown .countdown-box::after {
+    right: -4px;
+    bottom: -4px;
+  }
+
+  #weddingCountdown .countdown-box span {
+    font-size: clamp(23px, 6.5vw, 31px);
+    line-height: 1.15;
+  }
+
+  #weddingCountdown .countdown-box small {
+    font-size: 7px;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+  }
+
+  /* No heart or horizontal line below timer */
+
+  #weddingCountdown .closing-ornament {
+    display: none !important;
+  }
+
+  /* Closing message */
+
+  #weddingCountdown .countdown-closing {
+    margin: 20px 0 22px;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  /* Full-width wedding drape */
+
+  #weddingCountdown .countdown-photo-area,
+  #weddingCountdown .countdown-drape-area {
+    display: block;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  #weddingCountdown .countdown-drape {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+}
+
+/* ======================================
+   SMALL PHONES
+====================================== */
+
+@media (max-width: 380px) {
+  #weddingCountdown {
+    padding-top: 32px;
+  }
+
+  #weddingCountdown .countdown-content {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  #weddingCountdown .countdown-heading {
+    font-size: 35px;
+  }
+
+  #weddingCountdown .countdown-heading span {
+    font-size: 57px;
+  }
+
+  #weddingCountdown .wedding-date {
+    gap: 7px;
+    font-size: 34px;
+  }
+
+  #weddingCountdown .countdown-timer {
+    gap: 5px;
+  }
+
+  #weddingCountdown .countdown-box {
+    min-height: 76px;
+    padding: 10px 1px;
+  }
+
+  #weddingCountdown .countdown-box span {
+    font-size: 23px;
+  }
+
+  #weddingCountdown .countdown-box small {
+    font-size: 6px;
+    letter-spacing: 0.4px;
+  }
+
+  #weddingCountdown .countdown-closing {
+    font-size: 16px;
+  }
+}
+
+/* ======================================
+   VERY SMALL PHONES
+====================================== */
+
+@media (max-width: 320px) {
+  #weddingCountdown .countdown-content {
+    padding-right: 9px;
+    padding-left: 9px;
+  }
+
+  #weddingCountdown .countdown-heading {
+    font-size: 32px;
+  }
+
+  #weddingCountdown .countdown-heading span {
+    font-size: 52px;
+  }
+
+  #weddingCountdown .wedding-date {
+    gap: 5px;
+    font-size: 30px;
+  }
+
+  #weddingCountdown .countdown-timer {
+    gap: 4px;
+  }
+
+  #weddingCountdown .countdown-box span {
+    font-size: 21px;
+  }
+
+  #weddingCountdown .countdown-box small {
+    font-size: 5px;
+    letter-spacing: 0.3px;
+  }
+}
+
+/* ======================================
+   ACCESSIBILITY
+====================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  #weddingCountdown *,
+  #weddingCountdown *::before,
+  #weddingCountdown *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

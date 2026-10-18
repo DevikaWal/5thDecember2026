@@ -1,477 +1,575 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devika & Sushant Wedding</title>
+    <title>Devika &amp; Sushant Wedding</title>
 
-     <!-- GOOGLE FONTS -->
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- PRELOAD ENTRANCE IMAGE -->
-    <link rel="preload" as="image" href="photos/entrance.jpg">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- CSS -->
+    <!-- PRELOAD ENTRANCE IMAGE -->
+    <link rel="preload" as="image" href="photos/entrance.jpg">
 
-    <!-- Entrance Page -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/entrance.css">
-    <!-- Welcome Page -->
     <link rel="stylesheet" href="css/welcomepage.css">
     <link rel="stylesheet" href="css/ourStory.css">
+    <link rel="stylesheet" href="css/countdown.css">
 </head>
+
 <body>
+
     <!-- MUSIC TOGGLE -->
-    <button id="musicToggle">
+    <button id="musicToggle" type="button" aria-label="Toggle background music">
         🔊
     </button>
 
-    <!-- ENTRANCE PAGE -->
+    <!-- ==================== ENTRANCE PAGE ==================== -->
     <div id="entry">
 
-        <!-- Entrance Photo -->
-        <img src="photos/entrance.jpg" class="entry-photo" alt="Wedding" fetchpriority="high" decoding="async">
-        <!-- Dark Overlay -->
+        <img
+            src="photos/entrance.jpg"
+            class="entry-photo"
+            alt="Wedding"
+            fetchpriority="high"
+            decoding="async">
+
         <div class="entry-photo-overlay"></div>
 
-        <!-- Wedding Logo -->
-        <img src="photos/ds-logo.png" class="entry-logo" alt="Devika and Sushant">
+        <img
+            src="photos/ds-logo.png"
+            class="entry-logo"
+            alt="Devika and Sushant">
 
-        <!-- Open Invitation -->
         <div class="entry-content">
-
-            <button class="open-btn" onclick="enterSite()">
+            <button class="open-btn" type="button" onclick="enterSite()">
                 Open Invitation
             </button>
         </div>
+
     </div>
 
-    <!-- WELCOME PAGE -->
     <!-- ==================== WELCOME PAGE ==================== -->
+    <section id="welcomePage">
 
-<section id="welcomePage">
+        <div class="welcome-paper"></div>
 
-    <div class="welcome-paper"></div>
+        <div class="welcome-layout">
 
-    <div class="welcome-layout">
-
-        <!-- LEFT: WEDDING PHOTO -->
-        <div class="welcome-photo-side">
-        <img src="photos/welcomepage.JPG"
-            class="main-wedding-photo"
-            alt="Devika and Sushant"
-             decoding="async"
-        >
-        </div>
-
-        <!-- RIGHT: INVITATION -->
-        <div class="welcome-content-side">
-
-            <!-- Fine gold corner details -->
-            <div class="corner-line corner-top-right"></div>
-            <div class="corner-line corner-bottom-left"></div>
-
-            <!-- TOP-RIGHT BOTANICAL BRANCH -->
-            <svg class="botanical botanical-top"
-                 viewBox="0 0 200 250"
-                 aria-hidden="true">
-
-                <g class="branch-drawing">
-                    <!-- Main stem -->
-                    <path class="branch-stem"
-                          d="M195 0 C165 38 145 78 120 118 C98 157 70 198 35 250"/>
-
-                    <!-- Leaves -->
-                    <path class="leaf-fill"
-                          d="M164 42 C137 42 120 26 112 8 C136 12 155 22 164 42Z"/>
-
-                    <path class="leaf-fill leaf-light"
-                          d="M153 58 C175 56 190 43 197 26 C177 31 160 42 153 58Z"/>
-
-                    <path class="leaf-fill"
-                          d="M139 82 C112 80 95 63 90 45 C114 51 132 64 139 82Z"/>
-
-                    <path class="leaf-fill leaf-light"
-                          d="M128 99 C151 99 169 85 179 68 C156 73 139 84 128 99Z"/>
-
-                    <path class="leaf-fill"
-                          d="M109 130 C85 125 72 108 69 91 C91 98 104 111 109 130Z"/>
-
-                    <path class="leaf-fill leaf-light"
-                          d="M99 146 C121 145 139 133 150 116 C128 121 111 132 99 146Z"/>
-
-                    <path class="leaf-fill"
-                          d="M80 176 C58 170 47 153 45 137 C65 144 77 159 80 176Z"/>
-
-                    <path class="leaf-fill leaf-light"
-                          d="M69 192 C90 190 105 177 114 161 C94 167 79 178 69 192Z"/>
-
-                    <!-- Delicate gold seed details -->
-                    <path class="branch-accent"
-                          d="M175 36 Q183 29 187 19"/>
-
-                    <ellipse class="seed"
-                             cx="182" cy="29"
-                             rx="2.5" ry="5"
-                             transform="rotate(35 182 29)"/>
-
-                    <ellipse class="seed"
-                             cx="91" cy="104"
-                             rx="2.5" ry="5"
-                             transform="rotate(-25 91 104)"/>
-
-                    <ellipse class="seed"
-                             cx="54" cy="151"
-                             rx="2.5" ry="5"
-                             transform="rotate(25 54 151)"/>
-                </g>
-            </svg>
-
-            <!-- INVITATION TEXT -->
-            <div class="welcome-content">
-
-                <div class="top-ornament reveal-item">
-                    <span class="ornament-line"></span>
-                    <span class="ornament-symbol"></span>
-                    <span class="ornament-line"></span>
-                </div>
-
-                <p class="welcome-intro reveal-item">
-                    You are cordially invited
-                    <br>
-                    to the wedding of
-                </p>
-
-                <h1 class="welcome-names reveal-item">
-                    Devika
-                    <span class="ampersand">&amp;</span>
-                    Sushant
-                </h1>
-
-                <div class="middle-ornament reveal-item">
-                    <span class="line"></span>
-                    <span class="diamond"></span>
-                    <span class="line"></span>
-                </div>
-
-                <p class="welcome-message reveal-item">
-                    Together with our families, we joyfully invite
-                    you to celebrate the beginning of our forever.
-                </p>
-
-            </div>
-
-            <!-- BOTTOM-LEFT BOTANICAL BRANCH -->
-            <svg class="botanical botanical-bottom"
-                 viewBox="0 0 250 270"
-                 aria-hidden="true">
-
-                <g class="branch-drawing">
-                    <path class="branch-stem"
-                          d="M0 270 C40 230 67 193 95 153 C124 111 160 66 235 12"/>
-
-                    <path class="leaf-fill"
-                          d="M42 229 C19 227 6 211 2 194 C23 201 37 213 42 229Z"/>
-
-                    <path class="leaf-fill leaf-light"
-                          d="M53 215 C75 214 91 199 98 181 C77 188 61 200 53 215Z"/>
-
-                    <path class="leaf-fill"
-                          d="M75 183 C51 178 39 160 38 143 C59 151 72 165 75 183Z"/>
-
-                    <path class="leaf-fill leaf-light"
-                          d="M86 168 C108 166 125 152 135 135 C113 140 97 153 86 168Z"/>
-
-                    <path class="leaf-fill"
-                          d="M111 133 C88 127 77 110 77 94 C97 101 109 116 111 133Z"/>
-
-                    <path class="leaf-fill leaf-light"
-                          d="M123 117 C144 115 160 100 168 83 C148 89 133 101 123 117Z"/>
-
-                    <path class="leaf-fill"
-                          d="M151 83 C130 76 120 60 121 44 C140 52 150 67 151 83Z"/>
-
-                    <path class="leaf-fill leaf-light"
-                          d="M163 68 C183 65 199 52 208 36 C188 41 174 53 163 68Z"/>
-
-                    <!-- Fine leaf veins -->
-                    <path class="leaf-vein"
-                          d="M10 201 Q25 211 38 225
-                             M43 222 Q68 210 94 186
-                             M45 151 Q61 164 71 178
-                             M80 101 Q96 115 106 129
-                             M125 51 Q140 65 147 79"/>
-
-                    <!-- Small gold buds -->
-                    <ellipse class="seed"
-                             cx="27" cy="190"
-                             rx="2.5" ry="5"
-                             transform="rotate(-25 27 190)"/>
-
-                    <ellipse class="seed"
-                             cx="102" cy="146"
-                             rx="2.5" ry="5"
-                             transform="rotate(25 102 146)"/>
-
-                    <ellipse class="seed"
-                             cx="193" cy="42"
-                             rx="2.5" ry="5"
-                             transform="rotate(35 193 42)"/>
-                </g>
-            </svg>
-
-        </div>
-    </div>
-</section>
-
-<!-- ==================== OUR STORY SECTION ==================== -->
-
-<section id="ourStory">
-
-    <div class="story-container">
-
-        <!-- LEFT: FEATURED COUPLE PHOTO -->
-        <div class="story-visual">
-
-            <div class="story-photo-frame">
+            <!-- LEFT: WEDDING PHOTO -->
+            <div class="welcome-photo-side">
                 <img
-                    src="photos/our-story-main.jpg"
-                    alt="Devika and Sushant in traditional attire"
-                    class="story-main-photo"
+                    src="photos/welcomepage.JPG"
+                    class="main-wedding-photo"
+                    alt="Devika and Sushant"
+                    decoding="async">
+            </div>
+
+            <!-- RIGHT: INVITATION -->
+            <div class="welcome-content-side">
+
+                <div class="corner-line corner-top-right"></div>
+                <div class="corner-line corner-bottom-left"></div>
+
+                <!-- TOP BOTANICAL BRANCH -->
+                <svg
+                    class="botanical botanical-top"
+                    viewBox="0 0 200 250"
+                    aria-hidden="true">
+
+                    <g class="branch-drawing">
+                        <path class="branch-stem"
+                            d="M195 0 C165 38 145 78 120 118 C98 157 70 198 35 250"/>
+
+                        <path class="leaf-fill"
+                            d="M164 42 C137 42 120 26 112 8 C136 12 155 22 164 42Z"/>
+
+                        <path class="leaf-fill leaf-light"
+                            d="M153 58 C175 56 190 43 197 26 C177 31 160 42 153 58Z"/>
+
+                        <path class="leaf-fill"
+                            d="M139 82 C112 80 95 63 90 45 C114 51 132 64 139 82Z"/>
+
+                        <path class="leaf-fill leaf-light"
+                            d="M128 99 C151 99 169 85 179 68 C156 73 139 84 128 99Z"/>
+
+                        <path class="leaf-fill"
+                            d="M109 130 C85 125 72 108 69 91 C91 98 104 111 109 130Z"/>
+
+                        <path class="leaf-fill leaf-light"
+                            d="M99 146 C121 145 139 133 150 116 C128 121 111 132 99 146Z"/>
+
+                        <path class="leaf-fill"
+                            d="M80 176 C58 170 47 153 45 137 C65 144 77 159 80 176Z"/>
+
+                        <path class="leaf-fill leaf-light"
+                            d="M69 192 C90 190 105 177 114 161 C94 167 79 178 69 192Z"/>
+
+                        <path class="branch-accent"
+                            d="M175 36 Q183 29 187 19"/>
+
+                        <ellipse class="seed" cx="182" cy="29"
+                            rx="2.5" ry="5"
+                            transform="rotate(35 182 29)"/>
+
+                        <ellipse class="seed" cx="91" cy="104"
+                            rx="2.5" ry="5"
+                            transform="rotate(-25 91 104)"/>
+
+                        <ellipse class="seed" cx="54" cy="151"
+                            rx="2.5" ry="5"
+                            transform="rotate(25 54 151)"/>
+                    </g>
+                </svg>
+
+                <!-- INVITATION TEXT -->
+                <div class="welcome-content">
+
+                    <div class="top-ornament reveal-item">
+                        <span class="ornament-line"></span>
+                        <span class="ornament-symbol"></span>
+                        <span class="ornament-line"></span>
+                    </div>
+
+                    <p class="welcome-intro reveal-item">
+                        You are cordially invited
+                        <br>
+                        to the wedding of
+                    </p>
+
+                    <h1 class="welcome-names reveal-item">
+                        Devika
+                        <span class="ampersand">&amp;</span>
+                        Sushant
+                    </h1>
+
+                    <div class="middle-ornament reveal-item">
+                        <span class="line"></span>
+                        <span class="diamond"></span>
+                        <span class="line"></span>
+                    </div>
+
+                    <p class="welcome-message reveal-item">
+                        Together with our families, we joyfully invite
+                        you to celebrate the beginning of our forever.
+                    </p>
+
+                </div>
+
+                <!-- BOTTOM BOTANICAL BRANCH -->
+                <svg
+                    class="botanical botanical-bottom"
+                    viewBox="0 0 250 270"
+                    aria-hidden="true">
+
+                    <g class="branch-drawing">
+                        <path class="branch-stem"
+                            d="M0 270 C40 230 67 193 95 153 C124 111 160 66 235 12"/>
+
+                        <path class="leaf-fill"
+                            d="M42 229 C19 227 6 211 2 194 C23 201 37 213 42 229Z"/>
+
+                        <path class="leaf-fill leaf-light"
+                            d="M53 215 C75 214 91 199 98 181 C77 188 61 200 53 215Z"/>
+
+                        <path class="leaf-fill"
+                            d="M75 183 C51 178 39 160 38 143 C59 151 72 165 75 183Z"/>
+
+                        <path class="leaf-fill leaf-light"
+                            d="M86 168 C108 166 125 152 135 135 C113 140 97 153 86 168Z"/>
+
+                        <path class="leaf-fill"
+                            d="M111 133 C88 127 77 110 77 94 C97 101 109 116 111 133Z"/>
+
+                        <path class="leaf-fill leaf-light"
+                            d="M123 117 C144 115 160 100 168 83 C148 89 133 101 123 117Z"/>
+
+                        <path class="leaf-fill"
+                            d="M151 83 C130 76 120 60 121 44 C140 52 150 67 151 83Z"/>
+
+                        <path class="leaf-fill leaf-light"
+                            d="M163 68 C183 65 199 52 208 36 C188 41 174 53 163 68Z"/>
+
+                        <path class="leaf-vein"
+                            d="M10 201 Q25 211 38 225
+                               M43 222 Q68 210 94 186
+                               M45 151 Q61 164 71 178
+                               M80 101 Q96 115 106 129
+                               M125 51 Q140 65 147 79"/>
+
+                        <ellipse class="seed" cx="27" cy="190"
+                            rx="2.5" ry="5"
+                            transform="rotate(-25 27 190)"/>
+
+                        <ellipse class="seed" cx="102" cy="146"
+                            rx="2.5" ry="5"
+                            transform="rotate(25 102 146)"/>
+
+                        <ellipse class="seed" cx="193" cy="42"
+                            rx="2.5" ry="5"
+                            transform="rotate(35 193 42)"/>
+                    </g>
+                </svg>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== OUR STORY ==================== -->
+    <section id="ourStory">
+
+        <div class="story-container">
+
+            <!-- FEATURED PHOTO -->
+            <div class="story-visual">
+
+                <div class="story-photo-frame">
+                    <img
+                        src="photos/our-story-main.jpg"
+                        alt="Devika and Sushant in traditional attire"
+                        class="story-main-photo"
+                        loading="lazy"
+                        decoding="async">
+                </div>
+
+                <svg
+                    class="story-botanical"
+                    viewBox="0 0 160 220"
+                    aria-hidden="true">
+
+                    <path class="story-stem"
+                        d="M8 215 C45 170 65 125 90 80 C110 45 130 25 150 8"/>
+
+                    <path class="story-leaf"
+                        d="M48 164 C25 161 14 145 13 130 C33 136 44 148 48 164Z"/>
+
+                    <path class="story-leaf story-leaf-light"
+                        d="M59 146 C81 144 95 130 101 113 C81 119 67 132 59 146Z"/>
+
+                    <path class="story-leaf"
+                        d="M82 103 C60 98 50 82 51 67 C70 75 80 88 82 103Z"/>
+
+                    <path class="story-leaf story-leaf-light"
+                        d="M94 83 C114 80 128 67 135 51 C115 57 102 69 94 83Z"/>
+
+                    <circle class="story-seed" cx="117" cy="39" r="2.5"/>
+                    <circle class="story-seed" cx="128" cy="31" r="2"/>
+                </svg>
+
+            </div>
+
+            <!-- STORY CONTENT -->
+            <div class="story-content">
+
+                <div class="story-ornament" aria-hidden="true">
+                    <span></span>
+                    <span class="story-diamond"></span>
+                    <span></span>
+                </div>
+
+                <p class="story-eyebrow">THE BEGINNING</p>
+
+                <h2 class="story-heading">
+                    Our <span>Story</span>
+                </h2>
+
+                <div class="story-divider" aria-hidden="true">
+                    <span></span>
+                    <span class="story-diamond"></span>
+                    <span></span>
+                </div>
+
+                <p class="story-description">
+                    What began as a simple conversation slowly turned
+                    into countless memories, shared dreams, and a love
+                    that feels like home. Through every chapter, we found
+                    our greatest adventure in each other.
+                </p>
+
+                <!-- OUR STORY PHOTO CAROUSEL -->
+                <div
+                    class="story-gallery"
+                    id="storyGallery"
+                    aria-label="Our favourite moments">
+
+                    <div class="story-gallery-heading">
+                        <span class="story-gallery-kicker">
+                            A FEW FAVOURITE MOMENTS
+                        </span>
+                    </div>
+
+                    <div class="story-carousel">
+
+                        <button
+                            class="story-arrow story-prev"
+                            type="button"
+                            aria-label="Previous photo">
+                            &#8592;
+                        </button>
+
+                        <div class="story-arch-window">
+                            <div class="story-slides">
+
+                                <figure class="story-slide is-active">
+                                    <img src="photos/story-01.jpg"
+                                        alt="Devika and Sushant together"
+                                        loading="lazy">
+                                    <figcaption>A moment to remember</figcaption>
+                                </figure>
+
+                                <figure class="story-slide">
+                                    <img src="photos/story-02.jpg"
+                                        alt="Devika and Sushant in traditional attire"
+                                        loading="lazy">
+                                    <figcaption>Traditions and togetherness</figcaption>
+                                </figure>
+
+                                <figure class="story-slide">
+                                    <img src="photos/story-03.jpg"
+                                        alt="Devika and Sushant outdoors"
+                                        loading="lazy">
+                                    <figcaption>Our little world</figcaption>
+                                </figure>
+
+                                <figure class="story-slide">
+                                    <img src="photos/story-04.jpg"
+                                        alt="Another favourite memory of the couple"
+                                        loading="lazy">
+                                    <figcaption>And so the story continues</figcaption>
+                                </figure>
+
+                                <figure class="story-slide">
+                                    <img src="photos/story-05.jpg"
+                                        alt="Devika and Sushant smiling together"
+                                        loading="lazy"
+                                        decoding="async">
+                                    <figcaption>Smiles that say it all</figcaption>
+                                </figure>
+
+                                <figure class="story-slide">
+                                    <img src="photos/story-06.jpg"
+                                        alt="A special occasion together"
+                                        loading="lazy"
+                                        decoding="async">
+                                    <figcaption>Celebrating us</figcaption>
+                                </figure>
+
+                                <figure class="story-slide">
+                                    <img src="photos/story-07.jpg"
+                                        alt="A beautiful memory with family"
+                                        loading="lazy"
+                                        decoding="async">
+                                    <figcaption>Surrounded by love</figcaption>
+                                </figure>
+
+                                <figure class="story-slide">
+                                    <img src="photos/story-08.jpg"
+                                        alt="Devika and Sushant dressed for an occasion"
+                                        loading="lazy"
+                                        decoding="async">
+                                    <figcaption>Every moment feels special</figcaption>
+                                </figure>
+
+                                <figure class="story-slide">
+                                    <img src="photos/story-09.jpg"
+                                        alt="Another cherished memory together"
+                                        loading="lazy"
+                                        decoding="async">
+                                    <figcaption>And many more to come</figcaption>
+                                </figure>
+
+                                <figure class="story-slide">
+                                    <img src="photos/story-10.jpg"
+                                        alt="Devika and Sushant beginning their next chapter"
+                                        loading="lazy"
+                                        decoding="async">
+                                    <figcaption>Forever starts here</figcaption>
+                                </figure>
+
+                            </div>
+                        </div>
+
+                        <button
+                            class="story-arrow story-next"
+                            type="button"
+                            aria-label="Next photo">
+                            &#8594;
+                        </button>
+
+                    </div>
+
+                    <div class="story-gallery-footer">
+
+                        <button
+                            class="story-play-toggle"
+                            type="button"
+                            aria-label="Pause slideshow"
+                            aria-pressed="false">
+                            <span class="story-play-icon" aria-hidden="true">Ⅱ</span>
+                        </button>
+
+                        <div
+                            class="story-progress"
+                            role="group"
+                            aria-label="Choose a photo">
+
+                            <button class="story-dot is-active"
+                                type="button"
+                                aria-label="Show photo 1"
+                                aria-current="true"></button>
+
+                            <button class="story-dot" type="button"
+                                aria-label="Show photo 2"></button>
+
+                            <button class="story-dot" type="button"
+                                aria-label="Show photo 3"></button>
+
+                            <button class="story-dot" type="button"
+                                aria-label="Show photo 4"></button>
+
+                            <button class="story-dot" type="button"
+                                aria-label="Show photo 5"></button>
+
+                            <button class="story-dot" type="button"
+                                aria-label="Show photo 6"></button>
+
+                            <button class="story-dot" type="button"
+                                aria-label="Show photo 7"></button>
+
+                            <button class="story-dot" type="button"
+                                aria-label="Show photo 8"></button>
+
+                            <button class="story-dot" type="button"
+                                aria-label="Show photo 9"></button>
+
+                            <button class="story-dot" type="button"
+                                aria-label="Show photo 10"></button>
+
+                        </div>
+
+                        <span class="story-count" aria-live="off">
+                            01 / 10
+                        </span>
+
+                    </div>
+                </div>
+                <!-- END OUR STORY PHOTO CAROUSEL -->
+
+                <div class="story-closing">
+                    <span class="story-closing-line"></span>
+                    <span class="story-heart" aria-hidden="true">♥</span>
+                    <span class="story-closing-line"></span>
+                </div>
+
+                <p class="story-closing-text">
+                    Different paths, a shared forever.
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WEDDING COUNTDOWN ==================== -->
+    <section id="weddingCountdown" class="wedding-countdown-section">
+
+        <div class="countdown-layout">
+
+            <!-- WEDDING DETAILS -->
+            <div class="countdown-content">
+
+                <div class="countdown-ornament" aria-hidden="true">
+                    <span></span>
+                    <b>◆</b>
+                    <span></span>
+                </div>
+
+                <p class="countdown-eyebrow">
+                    THE WEDDING CELEBRATION
+                </p>
+
+                <h2 class="countdown-heading">
+                    The Countdown
+                    <span>Begins</span>
+                </h2>
+
+                <div
+                    class="countdown-ornament heading-ornament"
+                    aria-hidden="true">
+                    <span></span>
+                    <b>◆</b>
+                    <span></span>
+                </div>
+
+                <p class="wedding-weekday">SATURDAY</p>
+
+                <p class="wedding-date">
+                    05 <span>·</span> 12 <span>·</span> 2026
+                </p>
+
+                <p class="wedding-muhurta">
+                    WEDDING MUHURTA <span>·</span>
+                    <strong>12:17 PM</strong>
+                </p>
+
+                <!-- LIVE COUNTDOWN -->
+                <div class="countdown-timer" aria-label="Wedding countdown">
+
+                    <div class="countdown-box">
+                        <span id="countDays">000</span>
+                        <small>DAYS</small>
+                    </div>
+
+                    <div class="countdown-box">
+                        <span id="countHours">00</span>
+                        <small>HOURS</small>
+                    </div>
+
+                    <div class="countdown-box">
+                        <span id="countMinutes">00</span>
+                        <small>MINUTES</small>
+                    </div>
+
+                    <div class="countdown-box">
+                        <span id="countSeconds">00</span>
+                        <small>SECONDS</small>
+                    </div>
+
+                </div>
+
+                <p id="countdownClosing" class="countdown-closing">
+                    A beautiful new chapter awaits…
+                </p>
+
+            </div>
+
+            <!-- DECORATIVE WEDDING FABRIC -->
+            <div class="countdown-photo-area countdown-drape-area">
+                <img
+                    src="photos/wedding-drape.png"
+                    alt="Burgundy and ivory embroidered wedding fabric"
+                    class="countdown-drape"
                     loading="lazy"
-                    decoding="async"
-                >
+                    decoding="async">
             </div>
-
-            <!-- Decorative botanical branch -->
-            <svg class="story-botanical"
-                 viewBox="0 0 160 220"
-                 aria-hidden="true">
-
-                <path class="story-stem"
-                      d="M8 215 C45 170 65 125 90 80 C110 45 130 25 150 8"/>
-
-                <path class="story-leaf"
-                      d="M48 164 C25 161 14 145 13 130 C33 136 44 148 48 164Z"/>
-
-                <path class="story-leaf story-leaf-light"
-                      d="M59 146 C81 144 95 130 101 113 C81 119 67 132 59 146Z"/>
-
-                <path class="story-leaf"
-                      d="M82 103 C60 98 50 82 51 67 C70 75 80 88 82 103Z"/>
-
-                <path class="story-leaf story-leaf-light"
-                      d="M94 83 C114 80 128 67 135 51 C115 57 102 69 94 83Z"/>
-
-                <circle class="story-seed" cx="117" cy="39" r="2.5"/>
-                <circle class="story-seed" cx="128" cy="31" r="2"/>
-            </svg>
 
         </div>
+    </section>
 
-        <!-- RIGHT: OUR STORY -->
-        <div class="story-content">
+    <!-- ==================== BACKGROUND MUSIC ==================== -->
+    <audio id="bgMusic" loop preload="none">
+        <source src="./song.mp3" type="audio/mpeg">
+    </audio>
 
-            <div class="story-ornament" aria-hidden="true">
-                <span></span>
-                <span class="story-diamond"></span>
-                <span></span>
-            </div>
-
-            <p class="story-eyebrow">THE BEGINNING</p>
-
-            <h2 class="story-heading">
-                Our <span>Story</span>
-            </h2>f
-            <div class="story-divider" aria-hidden="true">
-                <span></span>
-                <span class="story-diamond"></span>
-                <span></span>
-            </div>
-
-            <p class="story-description">
-                What began as a simple conversation slowly turned
-                into countless memories, shared dreams, and a love
-                that feels like home. Through every chapter, we found
-                our greatest adventure in each other.
-            </p>
-
-            <!-- TWO SUPPORTING PHOTOS -->
-
-<!-- OUR STORY PHOTO CAROUSEL -->
-<div class="story-gallery" id="storyGallery" aria-label="Our favourite moments">
-
-    <div class="story-gallery-heading">
-        <span class="story-gallery-kicker">A FEW FAVOURITE MOMENTS</span>
-    </div>
-
-    <div class="story-carousel">
-
-        <button class="story-arrow story-prev"
-                type="button"
-                aria-label="Previous photo">
-            &#8592;
-        </button>
-
-        <div class="story-arch-window">
-            <div class="story-slides">
-
-                <!-- Replace these filenames with your photos -->
-                <figure class="story-slide is-active">
-                    <img src="photos/story-01.jpg"
-                         alt="Devika and Sushant together"
-                         loading="lazy">
-                    <figcaption>A moment to remember</figcaption>
-                </figure>
-
-                <figure class="story-slide">
-                    <img src="photos/story-02.jpg"
-                         alt="Devika and Sushant in traditional attire"
-                         loading="lazy">
-                    <figcaption>Traditions and togetherness</figcaption>
-                </figure>
-
-                <figure class="story-slide">
-                    <img src="photos/story-03.jpg"
-                         alt="Devika and Sushant outdoors"
-                         loading="lazy">
-                    <figcaption>Our little world</figcaption>
-                </figure>
-
-                <figure class="story-slide">
-                    <img src="photos/story-04.jpg"
-                         alt="Another favourite memory of the couple"
-                         loading="lazy">
-                    <figcaption>And so the story continues</figcaption>
-                </figure>
-                <figure class="story-slide">
-                    <img src="photos/story-05.jpg" 
-                        alt="Devika and Sushant smiling together" 
-                        loading="lazy" decoding="async">
-                <figcaption>Smiles that say it all</figcaption>
-                </figure>
-                <figure class="story-slide">
-                    <img src="photos/story-06.jpg" alt="A special occasion together" loading="lazy" decoding="async">
-                    <figcaption>Celebrating us</figcaption>
-                </figure>
-                <figure class="story-slide">
-                    <img src="photos/story-07.jpg" alt="A beautiful memory with family" loading="lazy" decoding="async">
-                    <figcaption>Surrounded by love</figcaption>
-                </figure>
-                <figure class="story-slide">
-                    <img src="photos/story-08.jpg" alt="Devika and Sushant dressed for an occasion" loading="lazy" decoding="async">
-                    <figcaption>Every moment feels special</figcaption>
-                </figure>
-                <figure class="story-slide">
-                    <img src="photos/story-09.jpg" alt="Another cherished memory together" loading="lazy" decoding="async">
-                    <figcaption>And many more to come</figcaption>
-                </figure>
-                <figure class="story-slide">
-                    <img src="photos/story-10.jpg" alt="Devika and Sushant beginning their next chapter" loading="lazy" decoding="async">
-                    <figcaption>Forever starts here</figcaption>
-                </figure>
-            </div>
-        </div>
-
-        <button class="story-arrow story-next"
-                type="button"
-                aria-label="Next photo">
-            &#8594;
-        </button>
-
-    </div>
-
-    <div class="story-gallery-footer">
-        <button class="story-play-toggle"
-                type="button"
-                aria-label="Pause slideshow"
-                aria-pressed="false">
-            <span class="story-play-icon" aria-hidden="true">Ⅱ</span>
-        </button>
-
-        <div class="story-progress"
-             role="group"
-             aria-label="Choose a photo">
-            <button class="story-dot is-active"
-                    type="button"
-                    aria-label="Show photo 1"
-                    aria-current="true"></button>
-            <button class="story-dot"
-                    type="button"
-                    aria-label="Show photo 2"></button>
-            <button class="story-dot"
-                    type="button"
-                    aria-label="Show photo 3"></button>
-            <button class="story-dot"
-                    type="button"
-                    aria-label="Show photo 4"></button>
-            <button class="story-dot"
-                    type="button"
-                    aria-label="Show photo 5"></button>
-            <button class="story-dot"
-                    type="button"
-                    aria-label="Show photo 6"></button>
-            <button class="story-dot"
-                    type="button"
-                    aria-label="Show photo 7"></button>
-            <button class="story-dot"
-                    type="button"
-                    aria-label="Show photo 8"></button>
-            <button class="story-dot"
-                    type="button"
-                    aria-label="Show photo 9"></button>
-            <button class="story-dot"
-                    type="button"
-                    aria-label="Show photo 10"></button>
-        </div>
-
-        <span class="story-count" aria-live="off">01 / 10</span>
-    </div>
-
-</div>
-<!-- END OUR STORY PHOTO CAROUSEL -->
-
-
-            <div class="story-closing">
-                <span class="story-closing-line"></span>
-                <span class="story-heart" aria-hidden="true">♥</span>
-                <span class="story-closing-line"></span>
-            </div>
-
-            <p class="story-closing-text">
-                Different paths, a shared forever.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ==================== END OUR STORY ==================== -->
-
-
-
-
-    <!-- =====================================================
-         BACKGROUND MUSIC
-         ===================================================== -->
-
-        <audio id="bgMusic" loop preload="none">
-            <source src="./song.mp3" type="audio/mpeg">
-        </audio>
-
-
-
-    <!-- =====================================================
-         JAVASCRIPT
-         ===================================================== -->
-
+    <!-- ==================== JAVASCRIPT ==================== -->
     <script src="js/entrance.js" defer></script>
     <script src="js/storyCarousel.js" defer></script>
+    <script src="js/countdown.js" defer></script>
 
 </body>
-
 </html>

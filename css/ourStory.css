@@ -76,41 +76,6 @@
 
 /* BOTANICAL DECORATION */
 
-.story-botanical {
-    position: absolute;
-    z-index: 2;
-    width: clamp(105px, 15vw, 175px);
-    height: auto;
-
-    bottom: -25px;
-    left: -38px;
-
-    pointer-events: none;
-    overflow: visible;
-}
-
-.story-stem {
-    fill: none;
-    stroke: var(--story-green);
-    stroke-width: 1.5;
-    stroke-linecap: round;
-}
-
-.story-leaf {
-    fill: #75835A;
-    stroke: #586642;
-    stroke-width: 0.6;
-    stroke-linejoin: round;
-}
-
-.story-leaf-light {
-    fill: #A0A782;
-    stroke: #75815C;
-}
-
-.story-seed {
-    fill: var(--story-gold);
-}
 
 /* STORY TEXT */
 
@@ -504,11 +469,6 @@
         aspect-ratio: 0.82;
     }
 
-    .story-botanical {
-        width: 125px;
-        bottom: -20px;
-        left: -28px;
-    }
 
     .story-content {
         max-width: 520px;
@@ -574,3 +534,85 @@
         transition: none;
     }
 }
+
+
+/* ======================================
+   OUR STORY FLORAL PNG DECORATIONS
+====================================== */
+
+#ourStory {
+    position: relative;
+    isolation: isolate;
+}
+
+#ourStory .story-visual {
+    position: relative;
+    isolation: isolate;
+}
+
+#ourStory .story-floral {
+    position: absolute;
+    z-index: 3;
+    width: clamp(100px, 15vw, 200px);
+    pointer-events: none;
+    user-select: none;
+}
+
+#ourStory .story-floral img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#ourStory .story-floral-top {
+    top: -10px;
+    left: -10px;
+}
+
+#ourStory > .story-floral-bottom {
+    right: 0;
+    bottom: 0;
+    width: clamp(115px, 16vw, 210px);
+}
+
+@media (max-width: 768px) {
+    #ourStory .story-floral-top {
+        top: -5px;
+        left: -5px;
+        width: 85px;
+    }
+
+    #ourStory > .story-floral-bottom {
+        right: -5px;
+        bottom: 0;
+        width: 95px;
+    }
+}
+
+@media (max-width: 390px) {
+    #ourStory .story-floral-top {
+        width: 72px;
+    }
+
+    #ourStory > .story-floral-bottom {
+        width: 80px;
+    }
+}
+
+/* Floral divider below the Our Story heading */
+
+#ourStory .story-floral-divider {
+    display: block;
+    width: min(260px, 70%);
+    height: auto;
+    margin: 12px auto 22px;
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    #ourStory .story-floral-divider {
+        width: min(210px, 68%);
+        margin: 10px auto 18px;
+    }
+}
+

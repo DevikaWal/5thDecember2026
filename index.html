@@ -13,7 +13,7 @@
         rel="stylesheet">
 
     <!-- PRELOAD ENTRANCE IMAGE -->
-    <link rel="preload" as="image" href="photos/entrance.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="photos/entrance_280.jpg" fetchpriority="high">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/entrance.css">
@@ -140,18 +140,23 @@
     <div id="entry">
 
         <img
-            src="photos/entrance.jpg"
+            src="photos/entrance_280.jpg"
             class="entry-photo"
             alt="Wedding"
             fetchpriority="high"
-            decoding="async">
+            decoding="async"
+            width="1280"
+            height="1600">
 
         <div class="entry-photo-overlay"></div>
 
         <img
-            src="photos/ds-logo.png"
+            src="photos/ds-logo-500.png"
             class="entry-logo"
-            alt="Devika and Sushant">
+            alt="Devika and Sushant"
+            width="500"
+            height="500"
+            decoding="async">
 
         <div class="entry-content">
             <button class="open-btn" type="button" onclick="enterSite()">
@@ -171,11 +176,18 @@
             <!-- LEFT: WEDDING PHOTO -->
             <div class="welcome-photo-side">
                 <img
-                    src="photos/welcomepage.JPG"
+                    src="photos/welcomepage-1800.jpg"
                     class="main-wedding-photo"
                     alt="Devika and Sushant"
                     fetchpriority="low"
-                    decoding="async">
+                    loading="lazy"
+                    decoding="async"
+                    width="1800"
+                    height="1200">
+
+                <span class="welcome-arc-line" aria-hidden="true"></span>
+                <img src="photos/welcome-arc-bottom.png" alt="" class="welcome-arc-floral welcome-arc-bottom" aria-hidden="true">
+                <img src="photos/welcome-arc-mobile.png" alt="" class="welcome-arc-floral welcome-arc-mobile" aria-hidden="true">
             </div>
 
             <!-- RIGHT: INVITATION -->
@@ -185,7 +197,7 @@
                 <div class="corner-line corner-bottom-left"></div>
 
                 <div class="welcome-floral welcome-floral-top" aria-hidden="true">
-                    <img src="photos/welcome-floral-top.png" alt="Floral decoration ">
+                    <img src="photos/welcome-top-right.png" alt="">
                     </div>
 
                 <!-- INVITATION TEXT -->
@@ -209,11 +221,17 @@
                         Sushant
                     </h1>
 
-                    <div class="middle-ornament reveal-item">
+                    <img
+                    src="photos/floral-divider.png"
+                    class="welcome-floral-divider"
+                    alt=""
+                    aria-hidden="true">
+
+                    <!-- <div class="middle-ornament reveal-item">
                         <span class="line"></span>
                         <span class="diamond"></span>
                         <span class="line"></span>
-                    </div>
+                    </div> -->
 
                     <p class="welcome-message reveal-item">
                         Together with our families, we joyfully invite
@@ -223,9 +241,9 @@
                 </div>
 
                 <!-- BOTTOM BOTANICAL BRANCH --->
-                <div class="welcome-floral welcome-floral-bottom" aria-hidden="true">
-                     <img src="photos/welcome-floral-bottom.png" alt="">
-            </div>
+                <!-- <div class="welcome-floral welcome-floral-bottom" aria-hidden="true">
+                     <img src="photos/welcome-bottom-right.png" alt="">
+            </div> -->
 
             </div>
         </div>
@@ -234,6 +252,11 @@
     <!-- ==================== OUR STORY ==================== -->
     <section id="ourStory">
 
+        <img src="photos/ourstory-top-left.png" alt="" class="story-floral story-top-left" aria-hidden="true">
+        <img src="photos/ourstory-top-right-bells.png" alt="" class="story-floral story-top-right" aria-hidden="true">
+        <img src="photos/ourstory-bottom-left.png" alt="" class="story-floral story-bottom-left" aria-hidden="true">
+        <img src="photos/ourstory-bottom-right.png" alt="" class="story-floral story-bottom-right" aria-hidden="true">
+
         <div class="story-container">
 
             <!-- FEATURED PHOTO -->
@@ -241,17 +264,16 @@
 
                 <div class="story-photo-frame">
                     <img
-                        src="photos/our-story-main.jpg"
+                        src="photos/our-story-main-1600.jpg"
                         alt="Devika and Sushant in traditional attire"
                         class="story-main-photo"
                         loading="lazy"
-                        decoding="async">
+                        decoding="async"
+                        width="1600"
+                        height="1066">
                 </div>
 
-                <!-- OUR STORY FLORAL IMAGE -->
-                <div class="story-floral story-floral-top" aria-hidden="true">
-                    <img src="photos/story-floral-top.png" alt="">
-                </div>
+                <img src="photos/ourstory-arch-cluster.png" alt="" class="story-arch-floral" aria-hidden="true">
 
             </div>
 
@@ -437,9 +459,6 @@
                 </p>
 
             </div>
-        </div>
-        <div class="story-floral story-floral-bottom" aria-hidden="true">
-            <img src="photos/story-floral-bottom.png" alt="">
         </div>
     </section>
 

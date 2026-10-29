@@ -245,26 +245,7 @@
    MIDDLE ORNAMENT
    ========================================================= */
 
-.middle-ornament {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin: 26px auto 28px;
-}
-
-.middle-ornament .line {
-    width: 60px;
-    height: 1px;
-    background: #c49a4a;
-}
-
-.middle-ornament .diamond {
-    width: 7px;
-    height: 7px;
-    background: #c49a4a;
-    transform: rotate(45deg);
-}
+/* f */
 
 /* =========================================================
    INVITATION MESSAGE
@@ -430,7 +411,7 @@
 #welcomePage .welcome-floral {
     position: absolute;
     z-index: 3;
-    width: clamp(120px, 18vw, 230px);
+    width: clamp(160px, 26vw, 420px);
     pointer-events: none;
     user-select: none;
 }
@@ -442,40 +423,140 @@
 }
 
 #welcomePage .welcome-floral-top {
-    top: 0;
-    right: 0;
+    top: -25px;
+    right: -45px;
 }
 
-#welcomePage .welcome-floral-bottom {
+    /* #welcomePage .welcome-floral-bottom {
+        bottom: 0;
+        right: 0;
+        width: clamp(140px, 22vw, 340px);
+    } */
+
+@media (max-width: 768px) {
+    #welcomePage .welcome-content-side {
+        padding-top: clamp(80px, 22vw, 120px);
+        padding-bottom: clamp(95px, 28vw, 150px);
+    }
+
+    #welcomePage .welcome-floral-top {
+        top: 0;
+        right: 0;
+        width: clamp(125px, 36vw, 230px);
+    }
+
+    #welcomePage .welcome-floral-bottom {
+        right: 0;
+        bottom: 0;
+        width: clamp(130px, 38vw, 240px);
+    }
+}
+
+
+/* ======================================
+   WELCOME PAGE GOLD ARC + ARC FLORALS
+====================================== */
+
+#welcomePage .welcome-photo-side {
+    overflow: visible;
+}
+
+/* Photo is cut by an ellipse that bulges into the invitation side */
+#welcomePage .welcome-photo-side img.main-wedding-photo,
+#welcomePage .welcome-photo-side::before {
+    clip-path: ellipse(100% 72% at 0% 50%);
+}
+
+#welcomePage .welcome-photo-side::after {
+    display: none;
+}
+
+/* Let the paper texture run continuously behind the arc */
+#welcomePage .welcome-content-side {
+    background: transparent;
+}
+
+#welcomePage .welcome-arc-line {
+    position: absolute;
+    z-index: 4;
+    left: -100%;
+    top: -22%;
+    width: 200%;
+    height: 144%;
+    box-sizing: border-box;
+    border: 2px solid #c49a4a;
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 4px rgba(247, 241, 229, 0.85),
+        0 0 0 5px rgba(196, 154, 74, 0.55),
+        0 0 18px 6px rgba(120, 80, 40, 0.12);
+    pointer-events: none;
+}
+
+#welcomePage .welcome-arc-floral {
+    position: absolute;
+    z-index: 6;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    filter: drop-shadow(0 4px 8px rgba(73, 54, 45, 0.16));
+}
+
+#welcomePage .welcome-arc-top {
+    top: 0;
+    left: 77%;
+    width: 35%;
+}
+
+#welcomePage .welcome-arc-bottom {
     bottom: 0;
-    right: 0;
-    width: clamp(105px, 15vw, 190px);
+    left: 74%;
+    width: 41%;
+}
+
+#welcomePage .welcome-arc-mobile {
+    display: none;
 }
 
 @media (max-width: 768px) {
-    #welcomePage .welcome-floral-top {
-        top: 0;
-        right: -5px;
-        width: 110px;
+    /* Diagonal sweep: photo on top, curve rising to the right */
+    #welcomePage .welcome-photo-side img.main-wedding-photo,
+    #welcomePage .welcome-photo-side::before {
+        clip-path: ellipse(140% 100% at 0% 0%);
     }
 
-    #welcomePage .welcome-floral-bottom {
-        right: -5px;
-        bottom: 0;
-        width: 95px;
+    #welcomePage .welcome-arc-line {
+        left: -140%;
+        top: -100%;
+        width: 280%;
+        height: 200%;
     }
+
+
+#welcomePage .welcome-arc-mobile {
+    display: block;
+    top: 76%;
+    right: -3%;
+    width: min(58%, 340px);
 }
 
-@media (max-width: 390px) {
+    #welcomePage .welcome-arc-top,
+    #welcomePage .welcome-arc-bottom,
     #welcomePage .welcome-floral-top {
-        width: 90px;
+        display: none;
     }
 
-    #welcomePage .welcome-floral-bottom {
-        width: 78px;
+    #welcomePage .welcome-content-side {
+        flex: 1 0 auto;
+        align-items: center;
+        padding-top: 24px;
+    }
+
+    #welcomePage .corner-top-right {
+        display: none;
     }
 }
-
 
 /* =========================================================
    TABLET / MOBILE
@@ -668,5 +749,25 @@
 
     .welcome-message {
         font-size: 11px;
+    }
+}
+
+
+
+
+/* Welcome page floral divider — match Our Story */
+#welcomePage .welcome-floral-divider {
+    display: block;
+    width: min(260px, 70%);
+    height: auto;
+    margin: 12px auto 22px;
+    pointer-events: none;
+}
+
+/* Mobile — match Our Story */
+@media (max-width: 600px) {
+    #welcomePage .welcome-floral-divider {
+        width: min(210px, 68%);
+        margin: 10px auto 18px;
     }
 }

@@ -541,64 +541,86 @@
 ====================================== */
 
 #ourStory {
-    position: relative;
     isolation: isolate;
 }
 
-#ourStory .story-visual {
+#ourStory .story-container {
     position: relative;
-    isolation: isolate;
+    z-index: 2;
 }
 
-#ourStory .story-floral {
+#ourStory > .story-floral,
+#ourStory .story-arch-floral {
     position: absolute;
-    z-index: 3;
-    width: clamp(100px, 15vw, 200px);
+    height: auto;
     pointer-events: none;
     user-select: none;
+    -webkit-user-drag: none;
 }
 
-#ourStory .story-floral img {
-    display: block;
-    width: 100%;
-    height: auto;
+#ourStory > .story-floral {
+    z-index: 1;
 }
 
-#ourStory .story-floral-top {
-    top: -10px;
-    left: -10px;
+#ourStory .story-top-left {
+    top: 0;
+    left: 0;
+    width: clamp(130px, 16vw, 250px);
 }
 
-#ourStory > .story-floral-bottom {
+#ourStory .story-top-right {
+    top: 0;
+    right: 0;
+    width: clamp(140px, 18vw, 280px);
+}
+
+#ourStory .story-bottom-left {
+    left: 0;
+    bottom: 0;
+    width: clamp(150px, 19vw, 300px);
+}
+
+#ourStory .story-bottom-right {
     right: 0;
     bottom: 0;
-    width: clamp(115px, 16vw, 210px);
+    width: clamp(150px, 19vw, 300px);
+}
+
+/* Bouquet tucked against the bottom-left of the arch frame */
+
+#ourStory .story-arch-floral {
+    z-index: 3;
+    left: -16%;
+    bottom: -7%;
+    width: 58%;
+    filter: drop-shadow(0 6px 10px rgba(73, 54, 45, 0.18));
 }
 
 @media (max-width: 768px) {
-    #ourStory .story-floral-top {
-        top: -5px;
-        left: -5px;
-        width: 85px;
+    #ourStory {
+        padding-top: clamp(95px, 26vw, 140px);
+        padding-bottom: clamp(110px, 30vw, 160px);
     }
 
-    #ourStory > .story-floral-bottom {
-        right: -5px;
-        bottom: 0;
-        width: 95px;
+    #ourStory .story-top-left {
+        width: clamp(92px, 27vw, 150px);
+    }
+
+    #ourStory .story-top-right {
+        width: clamp(100px, 30vw, 165px);
+    }
+
+    #ourStory .story-bottom-left,
+    #ourStory .story-bottom-right {
+        width: clamp(115px, 34vw, 190px);
+    }
+
+    #ourStory .story-arch-floral {
+        left: -12%;
+        bottom: -6%;
+        width: 54%;
     }
 }
-
-@media (max-width: 390px) {
-    #ourStory .story-floral-top {
-        width: 72px;
-    }
-
-    #ourStory > .story-floral-bottom {
-        width: 80px;
-    }
-}
-
 /* Floral divider below the Our Story heading */
 
 #ourStory .story-floral-divider {
